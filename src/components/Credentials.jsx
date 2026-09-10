@@ -1,10 +1,13 @@
-import { certifications, credentialProfiles, education } from '../data/content';
+import { certifications, credentialProfiles, designWork, education } from '../data/content';
 import Icon from './Icons';
 import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
 
 const hasAnything =
-  certifications.length > 0 || education.length > 0 || credentialProfiles.length > 0;
+  certifications.length > 0 ||
+  education.length > 0 ||
+  credentialProfiles.length > 0 ||
+  designWork.length > 0;
 
 /** One credential-style card. Renders as an external link when a URL is supplied. */
 function CredentialCard({ icon, title, subtitle, detail, credentialId, href, badge }) {
@@ -44,8 +47,8 @@ export default function Credentials() {
       <div className="container">
         <SectionHeading
           eyebrow="Credentials"
-          title="Education, certifications and where to verify them"
-          lead="My formal qualification, the certifications I hold, and the profiles where you can independently confirm my history and work."
+          title="Education, certifications and design work"
+          lead="My formal qualification, the certificates I hold, samples of design work, and the profiles where you can independently confirm my history."
         />
 
         {education.length > 0 && (
@@ -88,6 +91,32 @@ export default function Credentials() {
                   />
                 </Reveal>
               ))}
+            </div>
+          </div>
+        )}
+
+        {designWork.length > 0 && (
+          <div className="creds__group">
+            <h3 className="creds__groupTitle">
+              <Icon name="sparkles" size={15} /> Design work
+            </h3>
+            <div className="design__grid">
+              {designWork.map((item, i) => {
+                const src = `${import.meta.env.BASE_URL}design/${item.image}`;
+                return (
+                  <Reveal key={item.title} delay={i * 70}>
+                    <a className="card design" href={src} target="_blank" rel="noreferrer">
+                      <span className="design__thumb">
+                        <img src={src} alt={`${item.title} portfolio sheet`} loading="lazy" decoding="async" />
+                      </span>
+                      <span className="design__body">
+                        <strong>{item.title}</strong>
+                        <small>{item.detail}</small>
+                      </span>
+                    </a>
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
         )}
