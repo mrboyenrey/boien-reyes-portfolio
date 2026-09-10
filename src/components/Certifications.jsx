@@ -4,6 +4,10 @@ import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
 
 export default function Certifications() {
+  // Nothing verified to show yet — hide the section entirely rather than
+  // render an empty grid. The nav link hides itself to match.
+  if (certifications.length === 0) return null;
+
   return (
     <section className="section" id="certifications">
       <div className="container">

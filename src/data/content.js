@@ -532,16 +532,21 @@ export const toolbelt = [
   'Monitoring',
 ];
 
-export const certifications = [
-  { name: 'Umbraco Certified Developer — Fundamentals', issuer: 'Umbraco', year: '2024', icon: 'layers' },
-  { name: 'WordPress Theme & Plugin Development', issuer: 'WordPress / Udemy', year: '2024', icon: 'globe' },
-  { name: 'GitHub Actions — CI/CD Foundations', issuer: 'GitHub', year: '2024', icon: 'pipeline' },
-  { name: 'Docker Essentials', issuer: 'Docker / Udemy', year: '2024', icon: 'package' },
-  { name: 'WooCommerce & WordPress Security Hardening', issuer: 'WordPress / Udemy', year: '2023', icon: 'shield' },
-  { name: 'Linux Server Administration', issuer: 'Self-paced & lab-based', year: '2023', icon: 'terminal' },
-  { name: 'Responsive Web Design', issuer: 'freeCodeCamp', year: '2022', icon: 'code' },
-  { name: 'IT Support Fundamentals', issuer: 'Google IT Support', year: '2021', icon: 'shield' },
-];
+// Certifications — intentionally EMPTY.
+//
+// The previous entries here were placeholders that were never verified against real
+// credentials (including an invented "Umbraco Certified Developer"), so they were
+// removed on 2026-09-10. Only add certifications you can actually evidence.
+//
+//   { name: 'Exact name as printed on the certificate',
+//     issuer: 'Issuing organisation',
+//     year: '2024',
+//     icon: 'shield',            // see src/components/Icons.jsx for the icon set
+//     url: 'https://...' }       // optional verification link
+//
+// The Credentials section and its nav link hide themselves automatically while this
+// array is empty, and reappear as soon as it has an entry.
+export const certifications = [];
 
 // "principle" cards in the About section.
 export const principles = [
@@ -566,16 +571,22 @@ export const contactForm = {
   minFillSeconds: 3,
 };
 
-export const navLinks = [
+// Section navigation. Entries with `enabled: false` are dropped — the Credentials
+// link disappears while there are no certifications to show.
+const SECTIONS = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Pipeline', href: '#pipeline' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
   { label: 'Websites', href: '#websites' },
-  { label: 'Credentials', href: '#certifications' },
+  { label: 'Credentials', href: '#certifications', enabled: certifications.length > 0 },
   { label: 'Contact', href: '#contact' },
 ];
+
+export const navLinks = SECTIONS.filter((section) => section.enabled !== false).map(
+  ({ label, href }) => ({ label, href }),
+);
 
 // Lines shown in the animated terminal card in the hero.
 export const terminalLines = [
