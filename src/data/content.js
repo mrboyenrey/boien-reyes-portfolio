@@ -552,6 +552,13 @@ export const toolbelt = [
 // `credentialId` is the number printed on the certificate itself.
 export const certifications = [
   {
+    name: 'Microsoft Artificial Intelligence Course: Azure AI Fundamentals',
+    issuer: 'TESDA Online Program',
+    year: '2026',
+    icon: 'cloud',
+    credentialId: 'M8cpkCkIWt',
+  },
+  {
     name: 'Prompt Engineering for ChatGPT',
     issuer: 'Vanderbilt University (via Coursera)',
     year: '2026',
@@ -560,10 +567,24 @@ export const certifications = [
     url: 'https://coursera.org/verify/M8WR8PJO828J',
   },
   {
+    name: 'Social Media Management',
+    issuer: 'Meta (via Coursera)',
+    year: '2021',
+    icon: 'users',
+  },
+  {
     name: 'Protecting Your Brand and Logo (Seminar)',
     issuer: 'DTI Negosyo Center, General Santos City',
     year: '2018',
     icon: 'shield',
+  },
+  {
+    name: 'Modern Web Development with Laravel 5.2 (PHP Framework)',
+    issuer: 'Udemy',
+    year: '2017',
+    icon: 'code',
+    credentialId: 'UC-WH163H5G',
+    url: 'https://www.udemy.com/certificate/UC-WH163H5G/',
   },
   {
     name: 'InDesign CS6 Essential Training',
