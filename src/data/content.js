@@ -463,6 +463,27 @@ export const projects = [
   },
 ];
 
+// Client websites delivered through agency, contract and freelance work.
+// Platforms were verified by inspecting each live site (Sep 2026) — WordPress
+// was confirmed via wp-json / wp-login responses and wp-content asset paths.
+// Sites left without a platform could not be confirmed, or have since migrated.
+// NOTE: wme.us.com is intentionally omitted — the domain no longer resolves.
+export const websites = [
+  { domain: 'creensolutions.com', url: 'https://creensolutions.com/', platform: 'WordPress', client: 'Creen Business Management Services' },
+  { domain: 'festoonhouse.com.au', url: 'https://festoonhouse.com.au/', platform: 'WordPress', client: 'Festoon House' },
+  { domain: 'frazerconsultants.com', url: 'https://www.frazerconsultants.com/', client: 'Frazer Consultants' },
+  { domain: 'xmworks.com', url: 'https://www.xmworks.com/', platform: 'WordPress' },
+  { domain: 'k9basics.com', url: 'https://k9basics.com/', platform: 'WordPress' },
+  { domain: 'loudounorthodontics.com', url: 'https://loudounorthodontics.com/', platform: 'WordPress' },
+  { domain: 'gotobeauty.com', url: 'https://gotobeauty.com/', platform: 'WordPress' },
+  { domain: 'musclenation.com', url: 'https://www.musclenation.com/', platform: 'WordPress' },
+  { domain: 'fuelandtiresaver.com', url: 'https://fuelandtiresaver.com/', platform: 'WordPress' },
+  { domain: 'volharddognutrition.com', url: 'https://www.volharddognutrition.com/' },
+  { domain: 'gamsat-prep.com', url: 'https://www.gamsat-prep.com/' },
+  { domain: 'stackrocktalent.com', url: 'https://www.stackrocktalent.com/', platform: 'Squarespace' },
+  { domain: 'peachbpo.com', url: 'https://www.peachbpo.com/', platform: 'Wix' },
+];
+
 // Tools rendered in the marquee/stack grid.
 export const toolbelt = [
   'React',
@@ -551,6 +572,7 @@ export const navLinks = [
   { label: 'Pipeline', href: '#pipeline' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Websites', href: '#websites' },
   { label: 'Credentials', href: '#certifications' },
   { label: 'Contact', href: '#contact' },
 ];
