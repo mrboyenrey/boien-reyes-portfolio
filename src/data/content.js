@@ -476,6 +476,20 @@ export const principles = [
   { title: 'Simple beats clever', text: 'Readable config and boring, well-understood tooling keep 3 a.m. pages rare.' },
 ];
 
+// ── Contact form delivery ──────────────────────────────────────────────────
+// Get a free access key at https://web3forms.com — enter your email, click the
+// confirmation link, and paste the key below. No account or signup needed.
+// With a key set, the form delivers straight to your inbox from this static
+// site. Leave it empty and the form falls back to opening the visitor's own
+// email client (mailto:), which requires them to press Send themselves.
+export const contactForm = {
+  provider: 'web3forms',
+  endpoint: 'https://api.web3forms.com/submit',
+  web3formsKey: '',
+  // Submissions faster than this are treated as bots and silently dropped.
+  minFillSeconds: 3,
+};
+
 export const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },

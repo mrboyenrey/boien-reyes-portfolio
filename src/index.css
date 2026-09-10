@@ -1426,6 +1426,65 @@ ol { margin: 0; padding: 0; list-style: none; }
   text-align: center;
 }
 
+/* Honeypot field — hidden from humans, still discoverable by bots. */
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Delivery failure notice. */
+.formAlert {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid color-mix(in srgb, var(--danger) 45%, transparent);
+  background: color-mix(in srgb, var(--danger) 12%, transparent);
+  font-size: 0.88rem;
+}
+
+.formAlert > svg {
+  color: var(--danger);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.formAlert strong { display: block; margin-bottom: 0.25rem; }
+
+.formAlert p {
+  margin: 0 0 0.65rem;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.formAlert .linkBtn { font-size: 0.82rem; }
+
+/* Sending indicator inside the submit button. */
+.spinner {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.btn:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn:disabled:hover { transform: none; }
+
 .success { text-align: center; padding: 1.5rem 0.5rem; }
 
 .success__icon {

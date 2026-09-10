@@ -71,7 +71,46 @@ Because the CMS work is front and centre, the pieces worth editing first are:
 - `certifications` — the Umbraco and WordPress credentials
 - `toolbelt` — the chip row under the About section
 
-## 📦 Project structure
+## � Contact form delivery
+
+The contact section posts to [Web3Forms](https://web3forms.com), which relays submissions to
+your inbox — this keeps the site fully static (no server, no database).
+
+**Setup (one time, free):**
+
+1. Go to <https://web3forms.com> and enter `mrboyenrey@gmail.com`
+2. Click the confirmation link they email you
+3. Copy the **Access Key** you are given
+4. Paste it into `contactForm.web3formsKey` in `src/data/content.js`
+5. Commit and push — the pipeline redeploys automatically
+
+```js
+export const contactForm = {
+  provider: 'web3forms',
+  endpoint: 'https://api.web3forms.com/submit',
+  web3formsKey: 'paste-your-key-here', // ← empty = mailto fallback
+  minFillSeconds: 3,
+};
+```
+
+**Behaviour:**
+
+| `web3formsKey` | What the form does |
+|---|---|
+| **Set** | `POST`s to Web3Forms → lands in your inbox. Reply-to is set to the sender, so you can hit Reply. |
+| **Empty** | Falls back to opening the visitor's own email client (`mailto:`), which requires them to press Send. |
+
+**Spam protection:** a hidden honeypot checkbox (`botcheck`) plus a minimum fill time
+(`minFillSeconds`, default 3s). Bots that trip either are shown a success message but the
+message is silently dropped — so they learn nothing.
+
+**On failure** the form shows an inline error with the reason from Web3Forms and offers a
+one-click "Send it from my email app instead" fallback, so an enquiry is never lost.
+
+> ⚠️ Without a key, the form only opens the visitor's mail client. On a machine with no mail
+> app configured (most webmail users), nothing happens at all — so set the key.
+
+## �📦 Project structure
 
 ```
 src/
