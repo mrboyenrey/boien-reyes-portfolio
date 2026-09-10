@@ -84,6 +84,13 @@ your inbox — this keeps the site fully static (no server, no database).
 4. Paste it into `contactForm.web3formsKey` in `src/data/content.js`
 5. Commit and push — the pipeline redeploys automatically
 
+> ✅ Already configured — the key for `mrboyenrey@gmail.com` is set in `src/data/content.js`.
+> The form delivers straight to that inbox.
+
+> ⚠️ Web3Forms ties a free key to the domain you registered it against
+> (`mrboyenrey.github.io`). Submissions from `localhost` may be rejected as an
+> unregistered domain — test delivery on the live site.
+
 ```js
 export const contactForm = {
   provider: 'web3forms',

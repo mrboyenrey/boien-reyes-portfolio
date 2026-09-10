@@ -485,7 +485,7 @@ export const principles = [
 export const contactForm = {
   provider: 'web3forms',
   endpoint: 'https://api.web3forms.com/submit',
-  web3formsKey: '',
+  web3formsKey: '860b616e-c3ff-4f93-a81c-42ce38efce1b',
   // Submissions faster than this are treated as bots and silently dropped.
   minFillSeconds: 3,
 };
