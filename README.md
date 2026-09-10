@@ -8,6 +8,8 @@
 [![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
 
+### 🔗 [View it live → mrboyenrey.github.io/boien-reyes-portfolio](https://mrboyenrey.github.io/boien-reyes-portfolio/)
+
 </div>
 
 ---
@@ -96,8 +98,13 @@ src/
 
 ## 🔁 Deployment
 
+**Live:** <https://mrboyenrey.github.io/boien-reyes-portfolio/>
+
 Push to `main` and the workflow in `.github/workflows/deploy.yml` lints, builds and publishes
 to GitHub Pages. Pull requests run the same lint + build gates without deploying.
+
+Pipeline: `checkout@v7` → `setup-node@v7` (Node 22, npm cache) → `npm ci` → `npm run lint`
+→ `npm run build` → `configure-pages@v6` → `upload-pages-artifact@v5` → `deploy-pages@v5`.
 
 `vite.config.js` sets `base: './'`, so the built assets also work from any sub-path.
 
