@@ -552,6 +552,14 @@ export const toolbelt = [
 // `credentialId` is the number printed on the certificate itself.
 export const certifications = [
   {
+    name: 'Prompt Engineering for ChatGPT',
+    issuer: 'Vanderbilt University (via Coursera)',
+    year: '2026',
+    icon: 'sparkles',
+    credentialId: 'M8WR8PJO828J',
+    url: 'https://coursera.org/verify/M8WR8PJO828J',
+  },
+  {
     name: 'Protecting Your Brand and Logo (Seminar)',
     issuer: 'DTI Negosyo Center, General Santos City',
     year: '2018',
@@ -623,30 +631,6 @@ export const credentialProfiles = [
     note: 'Freelance client history',
   },
 ];
-// Design work — scanned portfolio pages from the same set of documents as the
-// certificates. Images live in public/design/ and open full size on click.
-export const designWork = [
-  {
-    title: 'Logo Design',
-    image: 'logo-design.jpg',
-    detail: 'Brand marks and identity concepts',
-  },
-  {
-    title: 'Banner Design',
-    image: 'banner-design.jpg',
-    detail: 'Advertising banners for web campaigns',
-  },
-  {
-    title: 'Image Editing',
-    image: 'image-editing.jpg',
-    detail: 'Photo compositing and retouching',
-  },
-  {
-    title: 'Web Design',
-    image: 'web-design.jpg',
-    detail: 'Website layout and UI mockups',
-  },
-];
 // "principle" cards in the About section.
 export const principles = [
   { title: 'Automate the second time', text: 'If a task is done twice by hand, it becomes a script, a job or a pipeline step.' },
@@ -673,7 +657,7 @@ export const contactForm = {
 // Section navigation. Entries with `enabled: false` are dropped — the Credentials
 // link disappears only if there is genuinely nothing to show there.
 const credentialsAvailable =
-  certifications.length + education.length + credentialProfiles.length + designWork.length > 0;
+  certifications.length + education.length + credentialProfiles.length > 0;
 
 const SECTIONS = [
   { label: 'About', href: '#about' },
