@@ -379,9 +379,37 @@ ol { margin: 0; padding: 0; list-style: none; }
   font-size: 0.86rem;
   letter-spacing: 0.02em;
   flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
 }
 
 :root[data-theme="light"] .nav__mark { color: #ffffff; }
+
+/* Photo variant: the portrait replaces the initials inside the same badge. */
+.nav__mark--photo { background: var(--surface-2); }
+
+.nav__mark--photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  display: block;
+  filter: grayscale(1) contrast(1.05);
+  transition: filter 0.25s ease;
+}
+
+.nav__brand:hover .nav__mark--photo img,
+.footer__brand:hover .nav__mark--photo img { filter: grayscale(0) contrast(1); }
+
+/* Thin accent ring so the greyscale portrait still reads as the brand badge. */
+.nav__mark--photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(34, 211, 238, 0.55);
+  pointer-events: none;
+}
 
 .nav__brandText { display: flex; flex-direction: column; line-height: 1.15; }
 .nav__brandText strong { font-size: 0.95rem; }

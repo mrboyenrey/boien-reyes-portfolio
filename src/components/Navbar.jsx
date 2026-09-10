@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { navLinks, profile } from '../data/content';
+import BrandMark from './BrandMark';
 import Icon from './Icons';
 
 export default function Navbar({ theme, onToggleTheme }) {
@@ -61,7 +62,7 @@ export default function Navbar({ theme, onToggleTheme }) {
     <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="container nav__inner">
         <a className="nav__brand" href="#top" onClick={(e) => go(e, '#top')}>
-          <span className="nav__mark" aria-hidden="true">{profile.initials}</span>
+          <BrandMark />
           <span className="nav__brandText">
             <strong>{profile.name}</strong>
             <small>Web · CMS · DevOps</small>

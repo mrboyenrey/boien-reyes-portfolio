@@ -6,6 +6,9 @@
 export const profile = {
   name: 'Boien Reyes',
   initials: 'BR',
+  // Square headshot shown inside the "BR" brand mark (navbar + footer).
+  // Served from /public. Delete the file and this line to fall back to the initials.
+  photo: 'avatar.png',
   headline: 'Web Developer · WordPress & Umbraco Expert · IT Ops · DevOps & CI/CD',
   // Rotating roles shown with a typing animation in the hero.
   roles: [

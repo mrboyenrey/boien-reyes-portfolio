@@ -1,4 +1,5 @@
 import { navLinks, profile } from '../data/content';
+import BrandMark from './BrandMark';
 import Icon from './Icons';
 
 export default function Footer() {
@@ -8,7 +9,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <div className="footer__brand">
-          <span className="nav__mark" aria-hidden="true">{profile.initials}</span>
+          <BrandMark />
           <div>
             <strong>{profile.name}</strong>
             <p className="muted">{profile.headline}</p>
