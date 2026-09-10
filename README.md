@@ -25,7 +25,7 @@
 | **Pipeline** | **Interactive** commit → lint → build → test → deploy → observe walkthrough |
 | **Experience** | Timeline with role highlights and tech stacks |
 | **Projects** | Filterable by discipline (Web / CMS / DevOps / IT Operations) with outcome metrics |
-| **Credentials** | Certifications and training, including Umbraco and WordPress development |
+| **Credentials** | Education (BS Computer Science), any certifications you add, and public profiles for verification. The section hides itself if all three are empty |
 | **Contact** | Validated form that hands off to the visitor's mail client |
 
 Plus: dark/light theme with persisted preference, scroll-progress bar, scroll-spy navigation,

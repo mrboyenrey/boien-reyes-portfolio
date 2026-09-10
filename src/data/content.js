@@ -548,6 +548,44 @@ export const toolbelt = [
 // array is empty, and reappear as soon as it has an entry.
 export const certifications = [];
 
+// Education — taken from my résumé, independently verifiable.
+export const education = [
+  {
+    degree: 'BS Computer Science',
+    school: 'Cebu Institute of Technology University',
+    detail: 'Cebu, Philippines',
+    icon: 'cap',
+  },
+];
+
+// Profiles where the claims on this page can be checked independently.
+export const credentialProfiles = [
+  {
+    label: 'LinkedIn',
+    icon: 'linkedin',
+    url: 'https://www.linkedin.com/in/boien-reyes-898a4b123/',
+    note: 'Work history and certifications',
+  },
+  {
+    label: 'GitHub',
+    icon: 'github',
+    url: 'https://github.com/mrboyenrey',
+    note: 'Source code for the projects above',
+  },
+  {
+    label: 'Behance',
+    icon: 'globe',
+    url: 'https://www.behance.net/BoienReyes',
+    note: 'Design and UI work',
+  },
+  {
+    label: 'Upwork',
+    icon: 'users',
+    url: 'https://www.upwork.com/freelancers/~01d6f91be43214304d',
+    note: 'Freelance client history',
+  },
+];
+
 // "principle" cards in the About section.
 export const principles = [
   { title: 'Automate the second time', text: 'If a task is done twice by hand, it becomes a script, a job or a pipeline step.' },
@@ -572,7 +610,10 @@ export const contactForm = {
 };
 
 // Section navigation. Entries with `enabled: false` are dropped — the Credentials
-// link disappears while there are no certifications to show.
+// link disappears only if there is genuinely nothing to show there.
+const credentialsAvailable =
+  certifications.length + education.length + credentialProfiles.length > 0;
+
 const SECTIONS = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
@@ -580,7 +621,7 @@ const SECTIONS = [
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
   { label: 'Websites', href: '#websites' },
-  { label: 'Credentials', href: '#certifications', enabled: certifications.length > 0 },
+  { label: 'Credentials', href: '#certifications', enabled: credentialsAvailable },
   { label: 'Contact', href: '#contact' },
 ];
 

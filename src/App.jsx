@@ -8,7 +8,7 @@ import Pipeline from './components/Pipeline';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Websites from './components/Websites';
-import Certifications from './components/Certifications';
+import Credentials from './components/Credentials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -77,7 +77,7 @@ export default function App() {
         <Experience />
         <Projects />
         <Websites />
-        <Certifications />
+        <Credentials />
         <Contact />
       </main>
 
