@@ -10,7 +10,7 @@ export default function Skills() {
         <SectionHeading
           eyebrow="Skills"
           title="The stack I build, run and automate with"
-          lead="Grouped by discipline — CMS platforms, development, operations and automation. Values reflect day-to-day confidence, not a ranking — I would rather be honest about a 76 than inflate a 95."
+          lead="Grouped by discipline — CMS platforms, development, SEO, operations, automation and AI. Values reflect day-to-day confidence, not a ranking — I would rather be honest about a 76 than inflate a 95."
         />
 
         <div className="skills__grid">
