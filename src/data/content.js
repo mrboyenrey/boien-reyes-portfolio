@@ -467,7 +467,8 @@ export const projects = [
 // Platforms were verified by inspecting each live site (Sep 2026) — WordPress
 // was confirmed via wp-json / wp-login responses and wp-content asset paths.
 // Sites left without a platform could not be confirmed, or have since migrated.
-// NOTE: wme.us.com is intentionally omitted — the domain no longer resolves.
+// NOTE: musclenation.com was removed — the domain is now parked by GoDaddy.
+// wme.us.com is also omitted — it no longer resolves.
 export const websites = [
   { domain: 'creensolutions.com', url: 'https://creensolutions.com/', platform: 'WordPress', client: 'Creen Business Management Services' },
   { domain: 'festoonhouse.com.au', url: 'https://festoonhouse.com.au/', platform: 'WordPress', client: 'Festoon House' },
@@ -476,7 +477,6 @@ export const websites = [
   { domain: 'k9basics.com', url: 'https://k9basics.com/', platform: 'WordPress' },
   { domain: 'loudounorthodontics.com', url: 'https://loudounorthodontics.com/', platform: 'WordPress' },
   { domain: 'gotobeauty.com', url: 'https://gotobeauty.com/', platform: 'WordPress' },
-  { domain: 'musclenation.com', url: 'https://www.musclenation.com/', platform: 'WordPress' },
   { domain: 'fuelandtiresaver.com', url: 'https://fuelandtiresaver.com/', platform: 'WordPress' },
   { domain: 'volharddognutrition.com', url: 'https://www.volharddognutrition.com/' },
   { domain: 'gamsat-prep.com', url: 'https://www.gamsat-prep.com/' },

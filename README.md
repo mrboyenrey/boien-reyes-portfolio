@@ -116,7 +116,31 @@ one-click "Send it from my email app instead" fallback, so an enquiry is never l
 
 > ⚠️ Without a key, the form only opens the visitor's mail client. On a machine with no mail
 > app configured (most webmail users), nothing happens at all — so set the key.
+## 🌐 Client websites & thumbnails
 
+The **Websites** section lists live client sites, each with a real screenshot and a
+platform badge. The badge is only shown where the platform could actually be verified
+(WordPress confirmed via `wp-json` / `wp-login.php` and `wp-content` asset paths), so a
+few entries deliberately have no badge rather than a guess.
+
+Thumbnails live in `public/sites/` as committed JPEGs (~40 KB each, 800×500, captured at
+the top of each homepage). They are **not** rebuilt by CI.
+
+**To refresh them:**
+
+```bash
+npm i -D playwright      # one-time; uses your local Chrome
+node scripts/generate-thumbnails.mjs
+npm uninstall playwright
+```
+
+The script waits for the page to settle, dismisses common cookie banners, nudges the
+page to trigger lazy-loaded hero media, then screenshots. Edit the `SITES` array in`scripts/generate-thumbnails.mjs` alongside `websites` in `src/data/content.js`.
+
+If an image is ever missing, the card falls back to a letter mark automatically.
+
+> Two sites from the original client list are deliberately excluded: `wme.us.com`
+> (domain no longer resolves) and `musclenation.com` (now a parked GoDaddy domain).
 ## �📦 Project structure
 
 ```
@@ -132,7 +156,8 @@ src/
    ├─ Skills.jsx         # grouped skills (CMS / dev / ops / automation) with animated bars
    ├─ Pipeline.jsx       # interactive CI/CD walkthrough
    ├─ Experience.jsx     # timeline
-   ├─ Projects.jsx       # filterable project grid
+   ├─ Projects.jsx       # filterable project grid (real GitHub repos)
+   ├─ Websites.jsx       # client sites with captured thumbnails
    ├─ Certifications.jsx # credentials
    ├─ Contact.jsx        # validated contact form
    ├─ ContactChannels.jsx
