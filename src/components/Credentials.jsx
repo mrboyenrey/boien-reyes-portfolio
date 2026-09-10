@@ -7,7 +7,7 @@ const hasAnything =
   certifications.length > 0 || education.length > 0 || credentialProfiles.length > 0;
 
 /** One credential-style card. Renders as an external link when a URL is supplied. */
-function CredentialCard({ icon, title, subtitle, detail, href, badge }) {
+function CredentialCard({ icon, title, subtitle, detail, credentialId, href, badge }) {
   const body = (
     <>
       <span className="cert__icon">
@@ -17,6 +17,7 @@ function CredentialCard({ icon, title, subtitle, detail, href, badge }) {
       <div className="cert__body">
         <h3>{title}</h3>
         <p className="muted">{[subtitle, detail].filter(Boolean).join(' | ')}</p>
+        {credentialId && <p className="cert__id">Cert ID {credentialId}</p>}
       </div>
 
       <span className="cert__badge" aria-hidden="true">
@@ -81,6 +82,7 @@ export default function Credentials() {
                     title={cert.name}
                     subtitle={cert.issuer}
                     detail={cert.year}
+                    credentialId={cert.credentialId}
                     href={cert.url}
                     badge="badgeCheck"
                   />

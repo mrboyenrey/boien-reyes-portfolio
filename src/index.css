@@ -1312,6 +1312,15 @@ ol { margin: 0; padding: 0; list-style: none; }
 .cert__body { flex: 1; min-width: 0; }
 .cert__body h3 { font-size: 0.95rem; margin-bottom: 0.15rem; }
 .cert__body p { margin: 0; font-size: 0.8rem; }
+
+.cert__body .cert__id {
+  margin-top: 0.25rem;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: var(--muted);
+  opacity: 0.85;
+  word-break: break-all;
+}
 .cert__badge { color: var(--ok); flex-shrink: 0; }
 
 /* ── Contact ──────────────────────────────────────────────────────────── */

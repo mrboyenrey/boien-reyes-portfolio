@@ -546,7 +546,45 @@ export const toolbelt = [
 //
 // The Credentials section and its nav link hide themselves automatically while this
 // array is empty, and reappear as soon as it has an entry.
-export const certifications = [];
+//
+// Source: the scanned certificates in
+// "OneDrive/.../Important Personal Documents/Boien's Documents/Work Certificates".
+// `credentialId` is the number printed on the certificate itself.
+export const certifications = [
+  {
+    name: 'Protecting Your Brand and Logo (Seminar)',
+    issuer: 'DTI Negosyo Center, General Santos City',
+    year: '2018',
+    icon: 'shield',
+  },
+  {
+    name: 'InDesign CS6 Essential Training',
+    issuer: 'Lynda.com / LinkedIn Learning',
+    year: '2016',
+    icon: 'layers',
+    credentialId: '215B7B45F5F24393A16A9CDC7FA74051',
+  },
+  {
+    name: 'Foundations of Logo Design',
+    issuer: 'lynda.com',
+    year: '2013',
+    icon: 'sparkles',
+    credentialId: '6B637B672A2D4F6E85D9E236DAD96DF',
+  },
+  {
+    name: 'Adobe Photoshop CS6 Essential Tools',
+    issuer: 'Alison',
+    year: '2013',
+    icon: 'globe',
+    credentialId: '542-1174357',
+  },
+  {
+    name: 'IT Passport Certification Project (Pilot Test)',
+    issuer: 'PhilNITS / ITPEC',
+    year: '2010',
+    icon: 'terminal',
+  },
+];
 
 // Education — taken from my résumé, independently verifiable.
 export const education = [
