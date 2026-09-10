@@ -14,7 +14,7 @@ export default function Projects() {
         <SectionHeading
           eyebrow="Projects"
           title="Selected work across build, deploy and operate"
-          lead="A mix of product builds and the operational work that keeps them healthy. Filter by the discipline you care about most."
+          lead="Real projects from my GitHub — every entry links to its public source, and the ones with a live demo are running right now. Filter by the discipline you care about most."
         />
 
         <div className="filters" role="tablist" aria-label="Filter projects by discipline">

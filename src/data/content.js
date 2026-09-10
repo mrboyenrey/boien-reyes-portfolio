@@ -180,7 +180,7 @@ export const experience = [
   {
     role: 'Web Developer / IT Operations',
     company: 'Creen Business Management Services',
-    period: 'May 2023 — Mar 2026',
+    period: 'May 2023 — Aug 2026',
     location: 'Philippines · Remote',
     summary:
       'Owned the company web presence plus the infrastructure behind it — websites, web services, servers, domains and hosting.',
@@ -275,147 +275,166 @@ export const projects = [
     category: 'Web',
     featured: true,
     blurb:
-      'Full-stack inventory system with role-based auth, stock movements, sales/purchases and reporting dashboards.',
+      'Full-stack inventory management system covering products, stock levels, sales, purchases, suppliers and reporting over a PHP REST API.',
     highlights: [
-      'React front end + PHP REST API over MySQL, with cookie-based session auth.',
-      'Reorder-level logic and restock suggestions surfaced on a Recharts dashboard.',
-      'CSV import/export, image uploads and one-click database + media backups.',
+      'React front end over a PHP REST API and MySQL, with endpoints for auth, items, categories, suppliers, stock, sales, purchases and reports.',
+      'Dashboard with summary cards, low-stock alerts, category breakdown and restock suggestions.',
+      'CSV import/export, product image uploads, and an audit trail written on every stock movement.',
     ],
-    stack: ['React', 'PHP', 'MySQL', 'REST', 'Recharts'],
+    stack: ['React', 'PHP', 'MySQL', 'REST API', 'CSV'],
     metrics: [
+      { label: 'API endpoints', value: '12' },
       { label: 'Modules', value: '8' },
-      { label: 'Roles', value: '3' },
     ],
     links: [
+      { label: 'Source', url: 'https://github.com/mrboyenrey/React-Inventory', icon: 'github' },
       { label: 'Case study', url: '#contact', icon: 'external' },
-      { label: 'Source', url: 'https://github.com/mrboyenrey', icon: 'github' },
     ],
   },
   {
-    title: 'Zero-Downtime Delivery Pipeline',
-    category: 'DevOps',
+    title: 'Grand Vista Hotel',
+    category: 'Web',
     featured: true,
     blurb:
-      'Reusable GitHub Actions pipeline that lints, tests, builds and releases web apps with health-gated rollouts.',
+      'Luxury hotel website with live availability search, a booking price engine, gallery lightbox and an auto-rotating testimonial carousel.',
     highlights: [
-      'Matrix builds across Node versions with npm caching for fast, reproducible runs.',
-      'Artifact-based deploys: the exact tested bundle is what reaches production.',
-      'Automatic rollback when the post-deploy health check fails.',
+      'Client-side search, guest filtering and price sorting, with a real-time booking calculator including tax.',
+      'Deployed automatically to GitHub Pages by a GitHub Actions workflow on every push to main.',
+      'Accessible, mobile-first layout built with plain CSS — no UI or icon libraries.',
     ],
-    stack: ['GitHub Actions', 'Node 20', 'Docker', 'Nginx', 'Bash'],
+    stack: ['React 19', 'Vite', 'CSS', 'GitHub Actions'],
     metrics: [
-      { label: 'Deploy time', value: '< 8 min' },
-      { label: 'Downtime', value: '0' },
+      { label: 'Sections', value: '9' },
+      { label: 'UI libraries', value: '0' },
     ],
     links: [
-      { label: 'Pipeline docs', url: '#pipeline', icon: 'external' },
-      { label: 'Source', url: 'https://github.com/mrboyenrey', icon: 'github' },
+      { label: 'Live demo', url: 'https://mrboyenrey.github.io/grand-vista-hotel/', icon: 'external' },
+      { label: 'Source', url: 'https://github.com/mrboyenrey/grand-vista-hotel', icon: 'github' },
     ],
   },
   {
-    title: 'Hotel Booking Website',
+    title: 'Lafina Beach Resort',
     category: 'Web',
     blurb:
-      'Luxury hotel site with live availability search, booking price engine, gallery lightbox and testimonials carousel.',
+      'Responsive beach resort website built with React and Vite, published straight to GitHub Pages.',
     highlights: [
-      'Client-side search, filtering and sorting with a real-time booking calculator.',
-      'Deployed automatically to GitHub Pages on every push to main.',
-      'Accessible, mobile-first layout with zero UI libraries.',
+      'Component-driven layout with reusable sections and an image-led responsive design.',
+      'Vite build pipeline with automated GitHub Pages deployment on every push.',
     ],
-    stack: ['React', 'Vite', 'CSS', 'GitHub Actions'],
-    metrics: [
-      { label: 'Lighthouse', value: '98' },
-      { label: 'Sections', value: '9' },
+    stack: ['React', 'Vite', 'CSS', 'GitHub Pages'],
+    metrics: [{ label: 'Deployment', value: 'Automated' }],
+    links: [
+      { label: 'Live demo', url: 'https://mrboyenrey.github.io/lafinabeach/', icon: 'external' },
+      { label: 'Source', url: 'https://github.com/mrboyenrey/lafinabeach', icon: 'github' },
     ],
-    links: [{ label: 'Live demo', url: 'https://mrboyenrey.github.io/grand-vista-hotel/', icon: 'external' }],
   },
   {
-    title: 'Umbraco Membership & Content Portal',
+    title: 'Flappy Bird — Canvas Game',
+    category: 'Web',
+    blurb:
+      'Browser game built from scratch on the HTML Canvas API — no game engine, no libraries, no dependencies.',
+    highlights: [
+      'Persistent best score in localStorage, plus pause (P) and quick-restart (R) controls.',
+      'Progressive difficulty — pipe speed and gap tightness scale as the score climbs.',
+      'Flap and collision particle effects with responsive canvas sizing for small screens.',
+    ],
+    stack: ['HTML', 'CSS', 'JavaScript', 'Canvas API'],
+    metrics: [
+      { label: 'Dependencies', value: '0' },
+      { label: 'Stars', value: '1' },
+    ],
+    links: [
+      { label: 'Play live', url: 'https://mrboyenrey.github.io/flappy-bird/', icon: 'external' },
+      { label: 'Source', url: 'https://github.com/mrboyenrey/flappy-bird', icon: 'github' },
+    ],
+  },
+  {
+    title: 'BoienTheme — Custom WordPress Theme',
     category: 'CMS',
     featured: true,
     blurb:
-      'Enterprise Umbraco build on .NET: custom document types, member auth, gated content and a Content Delivery API consumed by a separate React front end.',
+      'Hand-built WordPress theme with a modular CSS architecture and a Bootstrap 5 navigation walker.',
     highlights: [
-      'Modelled 40+ document types and compositions with Block List / Block Grid editors so editors compose pages without a developer.',
-      'Custom C# surface controllers, Umbraco Forms and members with role-based content gating.',
-      'Headless delivery: the Content Delivery API feeds a React front end, with preview support for authors.',
-      'SQL Server backend with scheduled publishing, health checks and dev → staging → live deployments.',
+      'Custom template files — header, footer, sidebar, index — with a functions.php bootstrap.',
+      'Bootstrap 5 nav walker class for accessible multi-level menus.',
+      'Styles split by concern (global, header, footer, sidebar, content) and registered per template.',
     ],
-    stack: ['Umbraco 13', 'C# / .NET', 'Razor', 'SQL Server', 'React', 'IIS'],
-    metrics: [
-      { label: 'Document types', value: '40+' },
-      { label: 'Author training', value: 'Done' },
-    ],
-    links: [{ label: 'Approach', url: '#contact', icon: 'external' }],
+    stack: ['WordPress', 'PHP', 'Bootstrap 5', 'CSS'],
+    metrics: [{ label: 'Theme parts', value: 'Custom' }],
+    links: [{ label: 'Source', url: 'https://github.com/mrboyenrey/BoienTheme', icon: 'github' }],
   },
   {
-    title: 'WordPress Multi-site Commerce Platform',
+    title: 'Contact Form CREEN — WordPress Plugin',
     category: 'CMS',
     blurb:
-      'WooCommerce build on WordPress multisite with a hand-built theme — no page-builder lock-in — plus WP-CLI migrations and staged updates.',
+      'WordPress plugin adding a contact form with Cloudflare Turnstile spam protection and email notifications.',
     highlights: [
-      'Custom Gutenberg block library with ACF-powered fields, so editors can build pages without touching layouts.',
-      'WooCommerce customisations: tiered pricing, shipping rules and a bespoke checkout flow.',
-      'WP-CLI driven migration with automated search-replace and redirect mapping — zero broken URLs.',
-      'Hardened install: least-privilege roles, security headers, WAF rules and staged core/plugin updates.',
+      'Cloudflare Turnstile integration, with API keys managed from a settings dashboard rather than hard-coded.',
+      'Admin toggle for automated confirmation emails, with customisable subject and body.',
+      'Submissions emailed to a configured address, with a success state returned to the visitor.',
     ],
-    stack: ['WordPress', 'WooCommerce', 'PHP', 'ACF', 'MySQL', 'WP-CLI'],
-    metrics: [
-      { label: 'Broken URLs', value: '0' },
-      { label: 'Sites', value: '6' },
+    stack: ['WordPress', 'PHP', 'Cloudflare Turnstile', 'Plugin API'],
+    metrics: [{ label: 'Spam layer', value: 'Turnstile' }],
+    links: [
+      { label: 'Source', url: 'https://github.com/mrboyenrey/contact-form-creen-plugin', icon: 'github' },
     ],
-    links: [{ label: 'Approach', url: '#contact', icon: 'external' }],
   },
   {
-    title: 'Backup & Disaster Recovery Runbook',
-    category: 'IT Operations',
+    title: 'Portfolio CI/CD Pipeline',
+    category: 'DevOps',
+    featured: true,
     blurb:
-      'Scheduled backup automation plus a tested recovery playbook covering databases, uploads and config.',
+      'This site — React 19 and Vite delivered by a GitHub Actions pipeline with lint and build gates and automated Pages releases.',
     highlights: [
-      'Nightly dumps with 14-day retention and integrity checks.',
-      'Rehearsed restore procedure with documented RTO/RPO targets.',
-      'Alerting on job failure so a silent backup gap can never go unnoticed.',
+      'Pull requests run lint and build gates; only main deploys, so a broken build can never reach production.',
+      'Actions upgraded to the current majors and Node 22 LTS to clear runtime deprecation warnings.',
+      'Relative asset base, so the same build works from any sub-path.',
     ],
-    stack: ['Bash', 'MySQL', 'Windows Task Scheduler', 'PHP'],
+    stack: ['GitHub Actions', 'Node 22', 'Vite', 'GitHub Pages'],
     metrics: [
-      { label: 'Retention', value: '14d' },
-      { label: 'Restore tested', value: 'Yes' },
+      { label: 'Manual steps', value: '0' },
+      { label: 'Gate', value: 'Lint + build' },
     ],
-    links: [{ label: 'Approach', url: '#contact', icon: 'external' }],
+    links: [
+      { label: 'Live site', url: 'https://mrboyenrey.github.io/boien-reyes-portfolio/', icon: 'external' },
+      { label: 'Source', url: 'https://github.com/mrboyenrey/boien-reyes-portfolio', icon: 'github' },
+    ],
   },
   {
-    title: 'Server Hardening & Monitoring Stack',
-    category: 'IT Operations',
-    blurb:
-      'Standardised VPS baseline: firewall rules, TLS renewal, log shipping and uptime alerting for client web apps.',
-    highlights: [
-      'Reproducible provisioning script cut new-server setup from a day to under an hour.',
-      'Automated certificate renewal removed recurring expiry incidents.',
-      'Centralised logs and 60-second uptime probes with on-call alert routing.',
-    ],
-    stack: ['Linux', 'Nginx', 'UFW', 'Certbot', 'Bash'],
-    metrics: [
-      { label: 'Setup', value: '< 1 hr' },
-      { label: 'Expired certs', value: '0' },
-    ],
-    links: [{ label: 'Approach', url: '#contact', icon: 'external' }],
-  },
-  {
-    title: 'Containerised Dev Environments',
+    title: 'Warning Lights — Real-time Control System',
     category: 'DevOps',
     blurb:
-      'Docker Compose stacks that give every project the same PHP, MySQL and web server versions on every machine.',
+      'WebSocket control system with separate dashboard, controller and lights-display interfaces kept in sync in real time.',
     highlights: [
-      'One command boots the full stack — no more "works on my machine".',
-      'Volumes and healthchecks tuned for fast local iteration.',
-      'Staging mirrors production closely enough to catch config bugs before release.',
+      'Express 5 server using ws to broadcast light state to every connected client instantly.',
+      'Three purpose-built interfaces: status dashboard, command controller and animated lights display.',
+      'State pushed from the server rather than polled, so every view updates together.',
     ],
-    stack: ['Docker', 'Docker Compose', 'PHP', 'MySQL', 'Apache'],
+    stack: ['Node.js', 'Express 5', 'WebSocket', 'JavaScript'],
+    metrics: [{ label: 'Interfaces', value: '3' }],
+    links: [
+      { label: 'Source', url: 'https://github.com/mrboyenrey/Warning_Lights', icon: 'github' },
+    ],
+  },
+  {
+    title: 'Automated Backup & Disaster Recovery',
+    category: 'IT Operations',
+    blurb:
+      'Backup automation and a rehearsed recovery playbook covering the inventory platform database, uploads and configuration.',
+    highlights: [
+      'Database dumps generated in pure PHP and run on a nightly schedule with 14-day retention.',
+      'Product images archived to zip alongside each database snapshot, both downloadable from a settings panel.',
+      'Documented restore procedure with backup and restore scripts, versioned in the repo as DISASTER_RECOVERY.md.',
+    ],
+    stack: ['PHP', 'MySQL', 'Bash', 'Windows Task Scheduler'],
     metrics: [
-      { label: 'Onboarding', value: '1 cmd' },
-      { label: 'Parity', value: 'High' },
+      { label: 'Retention', value: '14 days' },
+      { label: 'Schedule', value: 'Nightly' },
     ],
-    links: [{ label: 'Approach', url: '#contact', icon: 'external' }],
+    links: [
+      { label: 'Source', url: 'https://github.com/mrboyenrey/React-Inventory', icon: 'github' },
+      { label: 'Approach', url: '#contact', icon: 'external' },
+    ],
   },
 ];
 
