@@ -1,5 +1,5 @@
 // ───────────────────────────────────────────────────────────────────────────
-//  SITE CONTENT — edit everything about the portfolio from this one file.
+//  SITE CONTENT - edit everything about the portfolio from this one file.
 //  No build changes needed: save, and the UI updates instantly in dev.
 // ───────────────────────────────────────────────────────────────────────────
 
@@ -21,7 +21,7 @@ export const profile = {
   location: 'Philippines · Remote-friendly',
   availability: 'Open to full-time & contract roles',
   summary:
-    'I build web applications end to end and keep them running in production. That means shipping React front ends, WordPress and Umbraco CMS platforms, and PHP/.NET services — then automating the releases and owning the monitoring, backups and incident response that keep uptime high.',
+    'I build web applications end to end and keep them running in production. That means shipping React front ends, WordPress and Umbraco CMS platforms, and PHP/.NET services, then automating the releases and owning the monitoring, backups and incident response that keep uptime high.',
   email: 'mrboyenrey@gmail.com',
   phone: '+63 995 658 9481',
   resumeUrl: '#',
@@ -61,11 +61,11 @@ export const focusAreas = [
   {
     icon: 'rocket',
     title: 'CI/CD',
-    text: 'GitHub Actions pipelines for lint, test, build and zero-downtime release — with rollback paths and audit trails.',
+    text: 'GitHub Actions pipelines for lint, test, build and zero-downtime release, with rollback paths and audit trails.',
   },
 ];
 
-// Skill groups render as columns with proficiency bars (0–100).
+// Skill groups render as columns with proficiency bars (0-100).
 export const skillGroups = [
   {
     title: 'WordPress & CMS',
@@ -204,10 +204,10 @@ export const experience = [
   {
     role: 'Web Developer / IT Operations',
     company: 'Creen Business Management Services',
-    period: 'May 2023 — Aug 2026',
+    period: 'May 2023 - Aug 2026',
     location: 'Philippines · Remote',
     summary:
-      'Owned the company web presence plus the infrastructure behind it — websites, web services, servers, domains and hosting.',
+      'Owned the company web presence plus the infrastructure behind it: websites, web services, servers, domains and hosting.',
     highlights: [
       'Developed and maintained company websites and web services.',
       'Administered servers and managed domain and hosting infrastructure.',
@@ -218,7 +218,7 @@ export const experience = [
   {
     role: 'Full Stack Developer',
     company: 'Festoon House',
-    period: 'Feb 2022 — Mar 2023',
+    period: 'Feb 2022 - Mar 2023',
     location: 'Australia · Remote',
     summary:
       'Full stack development and web administration for an Australian retailer, including server troubleshooting and marketing design.',
@@ -232,7 +232,7 @@ export const experience = [
   {
     role: 'Web Specialist',
     company: 'Frazer Consultants',
-    period: 'May 2019 — Dec 2021',
+    period: 'May 2019 - Dec 2021',
     location: 'United States · Remote',
     summary:
       'Client-facing web support for a US consultancy, running day-to-day content operations on a funeral services website.',
@@ -246,7 +246,7 @@ export const experience = [
   {
     role: 'Full-Stack Developer',
     company: 'RuveneCo Inc.',
-    period: 'Jun 2017 — Oct 2019',
+    period: 'Jun 2017 - Oct 2019',
     location: 'Canada · Remote',
     summary:
       'Full stack contributor to an educational multimedia company, working across front end, back end and marketing design.',
@@ -261,7 +261,7 @@ export const experience = [
   {
     role: 'Front-End Web Developer & Graphic Designer',
     company: 'Upwork',
-    period: 'Jun 2014 — Jun 2018',
+    period: 'Jun 2014 - Jun 2018',
     location: 'Philippines · Remote',
     summary:
       'Freelance front-end development and graphic design for international clients, delivered entirely remotely.',
@@ -277,7 +277,7 @@ export const experience = [
   {
     role: 'Computer System Administrator & Technician',
     company: 'Adakat Computer',
-    period: 'May 2009 — Sep 2012',
+    period: 'May 2009 - Sep 2012',
     location: 'Philippines · Onsite',
     summary:
       'Hands-on hardware, software and small-network support in a computer sales and service shop.',
@@ -290,7 +290,7 @@ export const experience = [
   },
 ];
 
-// "category" values are used by the Projects filter — keep them consistent.
+// "category" values are used by the Projects filter - keep them consistent.
 export const projectCategories = ['All', 'WordPress', 'Web', 'DevOps', 'IT Operations'];
 
 export const projects = [
@@ -324,7 +324,7 @@ export const projects = [
     highlights: [
       'Client-side search, guest filtering and price sorting, with a real-time booking calculator including tax.',
       'Deployed automatically to GitHub Pages by a GitHub Actions workflow on every push to main.',
-      'Accessible, mobile-first layout built with plain CSS — no UI or icon libraries.',
+      'Accessible, mobile-first layout built with plain CSS, with no UI or icon libraries.',
     ],
     stack: ['React 19', 'Vite', 'CSS', 'GitHub Actions'],
     metrics: [
@@ -353,13 +353,13 @@ export const projects = [
     ],
   },
   {
-    title: 'Flappy Bird — Canvas Game',
+    title: 'Flappy Bird: Canvas Game',
     category: 'Web',
     blurb:
-      'Browser game built from scratch on the HTML Canvas API — no game engine, no libraries, no dependencies.',
+      'Browser game built from scratch on the HTML Canvas API, with no game engine, no libraries and no dependencies.',
     highlights: [
       'Persistent best score in localStorage, plus pause (P) and quick-restart (R) controls.',
-      'Progressive difficulty — pipe speed and gap tightness scale as the score climbs.',
+      'Progressive difficulty: pipe speed and gap tightness scale as the score climbs.',
       'Flap and collision particle effects with responsive canvas sizing for small screens.',
     ],
     stack: ['HTML', 'CSS', 'JavaScript', 'Canvas API'],
@@ -373,13 +373,13 @@ export const projects = [
     ],
   },
   {
-    title: 'BoienTheme — Custom WordPress Theme',
+    title: 'BoienTheme: Custom WordPress Theme',
     category: 'WordPress',
     featured: true,
     blurb:
       'Hand-built WordPress theme with a modular CSS architecture and a Bootstrap 5 navigation walker.',
     highlights: [
-      'Custom template files — header, footer, sidebar, index — with a functions.php bootstrap.',
+      'Custom template files (header, footer, sidebar, index) with a functions.php bootstrap.',
       'Bootstrap 5 nav walker class for accessible multi-level menus.',
       'Styles split by concern (global, header, footer, sidebar, content) and registered per template.',
     ],
@@ -388,7 +388,7 @@ export const projects = [
     links: [{ label: 'Source', url: 'https://github.com/mrboyenrey/BoienTheme', icon: 'github' }],
   },
   {
-    title: 'Contact Form CREEN — WordPress Plugin',
+    title: 'Contact Form CREEN: WordPress Plugin',
     category: 'WordPress',
     blurb:
       'WordPress plugin adding a contact form with Cloudflare Turnstile spam protection and email notifications.',
@@ -408,7 +408,7 @@ export const projects = [
     category: 'DevOps',
     featured: true,
     blurb:
-      'This site — React 19 and Vite delivered by a GitHub Actions pipeline with lint and build gates and automated Pages releases.',
+      'This site: React 19 and Vite delivered by a GitHub Actions pipeline with lint and build gates and automated Pages releases.',
     highlights: [
       'Pull requests run lint and build gates; only main deploys, so a broken build can never reach production.',
       'Actions upgraded to the current majors and Node 22 LTS to clear runtime deprecation warnings.',
@@ -425,7 +425,7 @@ export const projects = [
     ],
   },
   {
-    title: 'Warning Lights — Real-time Control System',
+    title: 'Warning Lights: Real-time Control System',
     category: 'DevOps',
     blurb:
       'WebSocket control system with separate dashboard, controller and lights-display interfaces kept in sync in real time.',
@@ -463,11 +463,11 @@ export const projects = [
 ];
 
 // Client websites delivered through agency, contract and freelance work.
-// Platforms were verified by inspecting each live site (Sep 2026) — WordPress
+// Platforms were verified by inspecting each live site (Sep 2026) - WordPress
 // was confirmed via wp-json / wp-login responses and wp-content asset paths.
 // Sites left without a platform could not be confirmed, or have since migrated.
-// NOTE: musclenation.com was removed — the domain is now parked by GoDaddy.
-// wme.us.com is also omitted — it no longer resolves.
+// NOTE: musclenation.com was removed - the domain is now parked by GoDaddy.
+// wme.us.com is also omitted - it no longer resolves.
 export const websites = [
   { domain: 'creensolutions.com', url: 'https://creensolutions.com/', platform: 'WordPress', client: 'Creen Business Management Services' },
   { domain: 'festoonhouse.com.au', url: 'https://festoonhouse.com.au/', platform: 'WordPress', client: 'Festoon House' },
@@ -531,11 +531,12 @@ export const toolbelt = [
   'Monitoring',
 ];
 
-// Certifications — intentionally EMPTY.
+// Certifications: every entry below is a real, printed certificate.
 //
 // The previous entries here were placeholders that were never verified against real
 // credentials (including an invented "Umbraco Certified Developer"), so they were
-// removed on 2026-09-10. Only add certifications you can actually evidence.
+// removed on 2026-09-10 and the list was rebuilt from the scanned originals. Only
+// add a certification you can actually evidence.
 //
 //   { name: 'Exact name as printed on the certificate',
 //     issuer: 'Issuing organisation',
@@ -614,7 +615,7 @@ export const certifications = [
   },
 ];
 
-// Education — taken from my résumé, independently verifiable.
+// Education: taken from my résumé, independently verifiable.
 export const education = [
   {
     degree: 'BS Computer Science',
@@ -654,14 +655,14 @@ export const credentialProfiles = [
 // "principle" cards in the About section.
 export const principles = [
   { title: 'Automate the second time', text: 'If a task is done twice by hand, it becomes a script, a job or a pipeline step.' },
-  { title: 'If it is not monitored, it is broken', text: 'Logs, metrics and alerts ship with the feature — not after the first outage.' },
+  { title: 'If it is not monitored, it is broken', text: 'Logs, metrics and alerts ship with the feature, not after the first outage.' },
   { title: 'Reversible by default', text: 'Every change has a rollback path and every backup has a tested restore.' },
   { title: 'Editors before developers', text: 'A WordPress or Umbraco build is not finished until a non-developer can publish safely without calling me.' },
   { title: 'Simple beats clever', text: 'Readable config and boring, well-understood tooling keep 3 a.m. pages rare.' },
 ];
 
 // ── Contact form delivery ──────────────────────────────────────────────────
-// Get a free access key at https://web3forms.com — enter your email, click the
+// Get a free access key at https://web3forms.com - enter your email, click the
 // confirmation link, and paste the key below. No account or signup needed.
 // With a key set, the form delivers straight to your inbox from this static
 // site. Leave it empty and the form falls back to opening the visitor's own
@@ -681,7 +682,7 @@ export const wordpressCapabilities = [
   {
     icon: 'layers',
     title: 'Custom themes',
-    text: 'Themes built to a design handoff — no page-builder lock-in and no bloated starter kit to fight later.',
+    text: 'Themes built to a design handoff, with no page-builder lock-in and no bloated starter kit to fight later.',
   },
   {
     icon: 'package',
@@ -701,7 +702,7 @@ export const wordpressCapabilities = [
   {
     icon: 'gauge',
     title: 'Speed & Core Web Vitals',
-    text: 'Caching, image pipelines and query tuning — measured against real field data, not just a lab score.',
+    text: 'Caching, image pipelines and query tuning, measured against real field data, not just a lab score.',
   },
   {
     icon: 'shield',
@@ -710,7 +711,7 @@ export const wordpressCapabilities = [
   },
 ];
 
-// Headline numbers under the hero — derived from the real arrays above.
+// Headline numbers under the hero - derived from the real arrays above.
 export const metrics = [
   {
     value: String(websites.filter((site) => site.platform === 'WordPress').length),
@@ -734,7 +735,7 @@ export const metrics = [
   },
 ];
 
-// Section navigation. Entries with `enabled: false` are dropped — the Credentials
+// Section navigation. Entries with `enabled: false` are dropped - the Credentials
 // link disappears only if there is genuinely nothing to show there.
 const credentialsAvailable =
   certifications.length + education.length + credentialProfiles.length > 0;

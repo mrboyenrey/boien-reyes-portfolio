@@ -1,4 +1,4 @@
-// Lightweight inline SVG icon set — no icon library dependency.
+// Lightweight inline SVG icon set - no icon library dependency.
 // Usage: <Icon name="rocket" size={20} />
 
 const paths = {

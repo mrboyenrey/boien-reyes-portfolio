@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   Boien Reyes — Portfolio
+   Boien Reyes Portfolio
    Design system: "ops console". Deep slate surfaces, cyan→indigo accents,
    monospace details for the DevOps / CI-CD story. Light theme included.
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -1484,7 +1484,7 @@ ol { margin: 0; padding: 0; list-style: none; }
   text-align: center;
 }
 
-/* Honeypot field — hidden from humans, still discoverable by bots. */
+/* Honeypot field: hidden from humans, still discoverable by bots. */
 .hp {
   position: absolute;
   left: -9999px;

@@ -18,7 +18,7 @@ export default function Contact() {
   const [errorMsg, setErrorMsg] = useState('');
   const [honeypot, setHoneypot] = useState(false);
 
-  // Timestamp of first render — bots submit almost instantly. Set in an
+  // Timestamp of first render: bots submit almost instantly. Set in an
   // effect because Date.now() is impure and must not run during render.
   const openedAt = useRef(null);
 
@@ -47,7 +47,7 @@ export default function Contact() {
   /** Fallback used when no key is configured, or when delivery fails. */
   const openMailClient = () => {
     const subject = encodeURIComponent(buildSubject());
-    const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`);
+    const body = encodeURIComponent(`${form.message}\n\n${form.name}\n${form.email}`);
     window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
   };
 
@@ -67,7 +67,7 @@ export default function Contact() {
       return;
     }
 
-    // No access key configured yet — hand off to the visitor's mail client.
+    // No access key configured yet, so hand off to the visitor's mail client.
     if (!hasLiveEndpoint) {
       openMailClient();
       setStatus('sent');
@@ -84,7 +84,7 @@ export default function Contact() {
         body: JSON.stringify({
           access_key: web3formsKey.trim(),
           subject: buildSubject(),
-          from_name: `${form.name} — portfolio contact form`,
+          from_name: `${form.name} (portfolio contact form)`,
           name: form.name.trim(),
           email: form.email.trim(),
           message: form.message.trim(),
@@ -130,7 +130,7 @@ export default function Contact() {
       <div className="container">
         <SectionHeading
           eyebrow="Contact"
-          title="Let's talk about your next build — or your pipeline"
+          title="Let's talk about your next build, or your pipeline"
           lead="Tell me what you are working on. Roles, contracts and one-off automation projects are all welcome."
         />
 
@@ -143,7 +143,7 @@ export default function Contact() {
                 <Icon name="activity" size={18} /> What happens next
               </h3>
               <ol className="steps">
-                <li>You send a short brief — stack, timeline, constraints.</li>
+                <li>You send a short brief: stack, timeline, constraints.</li>
                 <li>I reply within one business day with questions or a plan.</li>
                 <li>We agree scope, then work starts with a clear definition of done.</li>
               </ol>
@@ -159,12 +159,12 @@ export default function Contact() {
                 <h3>Thanks, {form.name.split(' ')[0] || 'there'}!</h3>
                 {hasLiveEndpoint ? (
                   <p>
-                    Your message is on its way to my inbox. I reply within one business day — if you do not
+                    Your message is on its way to my inbox. I reply within one business day. If you do not
                     hear back, reach me directly at <a href={`mailto:${profile.email}`}>{profile.email}</a>.
                   </p>
                 ) : (
                   <p>
-                    Your email client should have opened with the message ready to send — press Send there
+                    Your email client should have opened with the message ready to send. Press Send there
                     to deliver it. If nothing happened, email me directly at{' '}
                     <a href={`mailto:${profile.email}`}>{profile.email}</a>.
                   </p>
@@ -175,7 +175,7 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} noValidate>
-                {/* Spam trap — hidden from humans, irresistible to bots. */}
+                {/* Spam trap: hidden from humans, irresistible to bots. */}
                 <div className="hp" aria-hidden="true">
                   <label htmlFor="botcheck">Leave this box empty</label>
                   <input
@@ -271,8 +271,8 @@ export default function Contact() {
 
                 <p className="formNote">
                   {hasLiveEndpoint
-                    ? 'Delivered straight to my inbox — no data is stored on this site.'
-                    : 'Opens in your email client — no data is stored on this site.'}
+                    ? 'Delivered straight to my inbox. No data is stored on this site.'
+                    : 'Opens in your email client. No data is stored on this site.'}
                 </p>
               </form>
             )}

@@ -16,7 +16,7 @@ export default function WordPress() {
         <SectionHeading
           eyebrow="WordPress"
           title="WordPress is where most of my client work lives"
-          lead="I have been building on WordPress since before the block editor — custom themes, plugins, WooCommerce and the hosting and maintenance that keeps it all online. Everything below is backed by work you can open and check."
+          lead="I have been building on WordPress since before the block editor: custom themes, plugins, WooCommerce and the hosting and maintenance that keeps it all online. Everything below is backed by work you can open and check."
         />
 
         <Reveal className="wp__stats">

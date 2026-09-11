@@ -42,7 +42,7 @@ export default function Navbar({ theme, onToggleTheme }) {
   }, [open]);
 
   // If the viewport grows past the mobile breakpoint while the drawer is open,
-  // close it — otherwise the body would stay scroll-locked on desktop.
+  // close it, otherwise the body would stay scroll-locked on desktop.
   useEffect(() => {
     const onResize = () => {
       if (window.innerWidth > 880) setOpen(false);

@@ -10,7 +10,7 @@ export default function Experience() {
         <SectionHeading
           eyebrow="Experience"
           title="Roles where building and operating overlapped"
-          lead="Over a decade of remote work for companies in Australia, the United States, Canada and the Philippines — building the sites, running the servers, and supporting the people who use them."
+          lead="Over a decade of remote work for companies in Australia, the United States, Canada and the Philippines, building the sites, running the servers, and supporting the people who use them."
         />
 
         <ol className="timeline">

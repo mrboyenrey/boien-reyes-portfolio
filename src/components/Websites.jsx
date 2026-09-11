@@ -42,7 +42,7 @@ export default function Websites() {
         <SectionHeading
           eyebrow="Client work"
           title="Websites I've built and maintained"
-          lead="Live client sites from agency, contract and freelance work across Australia, the United States, Canada and the Philippines — including WordPress builds, custom CMS work and platform migrations."
+          lead="Live client sites from agency, contract and freelance work across Australia, the United States, Canada and the Philippines, including WordPress builds, custom CMS work and platform migrations."
         />
 
         <Reveal className="sites__stats">

@@ -11,7 +11,7 @@ export default function About() {
           eyebrow="About"
           title="One engineer across the whole delivery path"
           lead={
-            'Most teams divide building software from running it. I work on both sides of that line — which is why handoffs, environment drift and "works on my machine" tend to disappear from my projects.'
+            'Most teams divide building software from running it. I work on both sides of that line, which is why handoffs, environment drift and "works on my machine" tend to disappear from my projects.'
           }
         />
 
