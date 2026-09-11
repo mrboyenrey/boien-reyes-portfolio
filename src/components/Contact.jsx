@@ -213,8 +213,15 @@ export default function Contact() {
                       onChange={update('name')}
                       placeholder="Jane Doe"
                       autoComplete="name"
+                      required
+                      aria-invalid={errors.name ? 'true' : undefined}
+                      aria-describedby={errors.name ? 'name-error' : undefined}
                     />
-                    {errors.name && <span className="field__error">{errors.name}</span>}
+                    {errors.name && (
+                      <span className="field__error" id="name-error">
+                        {errors.name}
+                      </span>
+                    )}
                   </div>
 
                   <div className={`field ${errors.email ? 'has-error' : ''}`}>
@@ -227,8 +234,15 @@ export default function Contact() {
                       onChange={update('email')}
                       placeholder="jane@company.com"
                       autoComplete="email"
+                      required
+                      aria-invalid={errors.email ? 'true' : undefined}
+                      aria-describedby={errors.email ? 'email-error' : undefined}
                     />
-                    {errors.email && <span className="field__error">{errors.email}</span>}
+                    {errors.email && (
+                      <span className="field__error" id="email-error">
+                        {errors.email}
+                      </span>
+                    )}
                   </div>
                 </div>
 
@@ -253,8 +267,15 @@ export default function Contact() {
                     value={form.message}
                     onChange={update('message')}
                     placeholder="What are you building, and where does it hurt today?"
+                    required
+                    aria-invalid={errors.message ? 'true' : undefined}
+                    aria-describedby={errors.message ? 'message-error' : undefined}
                   />
-                  {errors.message && <span className="field__error">{errors.message}</span>}
+                  {errors.message && (
+                    <span className="field__error" id="message-error">
+                      {errors.message}
+                    </span>
+                  )}
                 </div>
 
                 <button type="submit" className="btn btn--primary btn--block" disabled={busy}>
