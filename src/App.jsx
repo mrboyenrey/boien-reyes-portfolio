@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Metrics from './components/Metrics';
 import About from './components/About';
 import Skills from './components/Skills';
+import WordPress from './components/WordPress';
 import Pipeline from './components/Pipeline';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
@@ -73,6 +74,7 @@ export default function App() {
         <Metrics />
         <About />
         <Skills />
+        <WordPress />
         <Pipeline />
         <Experience />
         <Projects />

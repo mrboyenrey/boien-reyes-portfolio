@@ -12,9 +12,9 @@ export const profile = {
   headline: 'Web Developer · WordPress & Umbraco Expert · IT Ops · DevOps & CI/CD',
   // Rotating roles shown with a typing animation in the hero.
   roles: [
-    'Full-Stack Web Developer',
+    'WordPress Developer',
     'WordPress & Umbraco Expert',
-    'IT Operations Engineer',
+    'Full-Stack Web Developer',
     'DevOps Practitioner',
     'CI/CD Pipeline Builder',
   ],
@@ -33,13 +33,9 @@ export const profile = {
   ],
 };
 
-// Headline numbers under the hero — keep these honest and specific.
-export const metrics = [
-  { value: '99.9%', label: 'Service uptime maintained', hint: 'monitoring + runbooks' },
-  { value: '60+', label: 'Web & CMS builds shipped', hint: 'React · WordPress · Umbraco' },
-  { value: '< 8 min', label: 'Commit to production', hint: 'automated pipelines' },
-  { value: '70%', label: 'Manual toil removed', hint: 'IaC + scripting' },
-];
+// Headline numbers under the hero.
+// NOTE: computed at the bottom of this file from `websites`, `projects` and
+// `certifications`, so every figure stays true if that data changes.
 
 export const focusAreas = [
   {
@@ -72,16 +68,16 @@ export const focusAreas = [
 // Skill groups render as columns with proficiency bars (0–100).
 export const skillGroups = [
   {
-    title: 'CMS Platforms',
+    title: 'WordPress & CMS',
     icon: 'layers',
     skills: [
       { name: 'WordPress (themes & plugins)', level: 95 },
-      { name: 'Umbraco (C# / .NET)', level: 90 },
-      { name: 'C# / .NET / Razor', level: 86 },
       { name: 'Gutenberg / ACF / Elementor', level: 92 },
       { name: 'WooCommerce', level: 88 },
-      { name: 'Shopify (themes & apps)', level: 82 },
       { name: 'WP-CLI & content migrations', level: 87 },
+      { name: 'WordPress security & hardening', level: 85 },
+      { name: 'Umbraco (C# / .NET)', level: 90 },
+      { name: 'Shopify (themes & apps)', level: 82 },
     ],
   },
   {
@@ -295,7 +291,7 @@ export const experience = [
 ];
 
 // "category" values are used by the Projects filter — keep them consistent.
-export const projectCategories = ['All', 'Web', 'CMS', 'DevOps', 'IT Operations'];
+export const projectCategories = ['All', 'WordPress', 'Web', 'DevOps', 'IT Operations'];
 
 export const projects = [
   {
@@ -378,7 +374,7 @@ export const projects = [
   },
   {
     title: 'BoienTheme — Custom WordPress Theme',
-    category: 'CMS',
+    category: 'WordPress',
     featured: true,
     blurb:
       'Hand-built WordPress theme with a modular CSS architecture and a Bootstrap 5 navigation walker.',
@@ -393,7 +389,7 @@ export const projects = [
   },
   {
     title: 'Contact Form CREEN — WordPress Plugin',
-    category: 'CMS',
+    category: 'WordPress',
     blurb:
       'WordPress plugin adding a contact form with Cloudflare Turnstile spam protection and email notifications.',
     highlights: [
@@ -678,6 +674,66 @@ export const contactForm = {
   minFillSeconds: 3,
 };
 
+// ── WordPress ────────────────────────────────────────────────────────────────
+// What I actually do on the platform. Counts elsewhere on the page are derived
+// from `websites` and `projects`, so they cannot drift from the real data.
+export const wordpressCapabilities = [
+  {
+    icon: 'layers',
+    title: 'Custom themes',
+    text: 'Themes built to a design handoff — no page-builder lock-in and no bloated starter kit to fight later.',
+  },
+  {
+    icon: 'package',
+    title: 'Plugins & integrations',
+    text: 'Purpose-built plugins plus third-party API, payment and CRM integrations when an off-the-shelf plugin does not fit.',
+  },
+  {
+    icon: 'globe',
+    title: 'WooCommerce',
+    text: 'Product catalogues, tiered pricing, shipping rules and checkout customisation on WordPress.',
+  },
+  {
+    icon: 'code',
+    title: 'Block editor, ACF & Divi',
+    text: 'Custom blocks and field groups so a non-developer can compose pages without touching template code.',
+  },
+  {
+    icon: 'gauge',
+    title: 'Speed & Core Web Vitals',
+    text: 'Caching, image pipelines and query tuning — measured against real field data, not just a lab score.',
+  },
+  {
+    icon: 'shield',
+    title: 'Security & maintenance',
+    text: 'Hardening, least-privilege roles, staged core and plugin updates, and off-site backups that have been restored.',
+  },
+];
+
+// Headline numbers under the hero — derived from the real arrays above.
+export const metrics = [
+  {
+    value: String(websites.filter((site) => site.platform === 'WordPress').length),
+    label: 'WordPress sites in production',
+    hint: 'live client work',
+  },
+  {
+    value: String(websites.length),
+    label: 'Client sites shipped and live',
+    hint: 'WordPress · Squarespace · Wix',
+  },
+  {
+    value: String(projects.length),
+    label: 'Public projects',
+    hint: 'source on GitHub',
+  },
+  {
+    value: String(certifications.length),
+    label: 'Certifications',
+    hint: 'verifiable, 2010-2026',
+  },
+];
+
 // Section navigation. Entries with `enabled: false` are dropped — the Credentials
 // link disappears only if there is genuinely nothing to show there.
 const credentialsAvailable =
@@ -686,6 +742,7 @@ const credentialsAvailable =
 const SECTIONS = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
+  { label: 'WordPress', href: '#wordpress' },
   { label: 'Pipeline', href: '#pipeline' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },

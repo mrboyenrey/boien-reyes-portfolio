@@ -1699,6 +1699,118 @@ ol { margin: 0; padding: 0; list-style: none; }
   color: var(--accent);
 }
 
+/* ── WordPress ────────────────────────────────────────────────────────── */
+/* Deliberately the only section with a tinted backdrop: it is the lead offer. */
+.wp {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 0%, var(--accent-soft), transparent 70%),
+    var(--bg-alt);
+  border-block: 1px solid var(--border);
+}
+
+.wp__stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.25rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.wp__stat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 0.86rem;
+  color: var(--text-dim);
+}
+
+.wp__stat strong {
+  font-family: var(--mono);
+  font-size: 1.05rem;
+  color: var(--accent);
+}
+
+.wp__stat--note {
+  border-color: transparent;
+  background: none;
+  padding-inline: 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.wp__grid {
+  display: grid;
+  /* 280px keeps this at 3x2 on desktop, matching the skills grid above. */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1rem, 2.2vw, 1.4rem);
+}
+
+.wpCard { transition: transform 0.22s ease, border-color 0.22s ease; }
+.wpCard:hover { transform: translateY(-4px); border-color: var(--accent); }
+
+.wpCard__icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 0.85rem;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.wpCard h3 { font-size: 1rem; }
+.wpCard p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+.wp__proof {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+  margin-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 1px solid var(--border);
+}
+
+.wp__proofCol h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.wp__proofCol h4 svg { color: var(--accent); }
+
+.wp__links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+.wp__sites {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.wp__sites a {
+  display: inline-block;
+  padding: 0.32rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.wp__sites a:hover { color: var(--accent); border-color: var(--accent); }
+
 /* ── Footer ───────────────────────────────────────────────────────────── */
 .footer {
   border-top: 1px solid var(--border);
@@ -1759,14 +1871,21 @@ ol { margin: 0; padding: 0; list-style: none; }
   .metric:nth-child(n + 3) { padding-top: 1.25rem; }
 }
 
-@media (max-width: 1240px) {
+@media (max-width: 1400px) {
   .nav__links a {
-    padding: 0.4rem 0.55rem;
-    font-size: 0.84rem;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.82rem;
   }
 }
 
-@media (max-width: 1140px) {
+@media (max-width: 1240px) {
+  .nav__links a {
+    padding: 0.4rem 0.45rem;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 1150px) {
   .nav__links,
   .nav__cta { display: none; }
   .nav__burger { display: inline-grid; }
