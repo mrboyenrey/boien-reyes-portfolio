@@ -782,6 +782,20 @@ ol { margin: 0; padding: 0; list-style: none; }
 
 .about__panel p { color: var(--text-dim); }
 
+/* Small mono label above the résumé professional summary in the About panel. */
+.about__subhead {
+  margin: 0 0 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Space between the summary paragraphs without widening the panel. */
+.about__panel p + p { margin-top: 0.85rem; }
+
 .about__toolbelt {
   display: flex;
   flex-wrap: wrap;

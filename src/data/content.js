@@ -22,6 +22,11 @@ export const profile = {
   availability: 'Open to full-time & contract roles',
   summary:
     'I build web applications end to end and keep them running in production. That means shipping React front ends, WordPress and Umbraco CMS platforms, and PHP/.NET services, then automating the releases and owning the monitoring, backups and incident response that keep uptime high.',
+  // Verbatim from the résumé's "Professional Summary" section. Rendered in the About panel.
+  professionalSummary: [
+    'IT Operations & Web Technology Specialist with 10+ years of remote experience supporting international organizations across the Philippines, Australia, United States, and Canada.',
+    'Experienced in WordPress and full-stack web development, website administration, hosting infrastructure, domain and DNS management, server administration, technical troubleshooting, and UI/UX design. Skilled in PHP, JavaScript, HTML/CSS, MySQL, REST/API-based web services, WordPress, Elementor, Divi, and other CMS platforms. Also experienced with AI and workflow automation tools including OpenAI, Claude, Copilot, Zapier, n8n, and Make.',
+  ],
   email: 'mrboyenrey@gmail.com',
   phone: '+63 995 658 9481',
   resumeUrl: '#',

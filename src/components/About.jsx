@@ -29,11 +29,10 @@ export default function About() {
               </div>
             </div>
 
-            <p>
-              My work starts with the interface a user touches and ends with the alert that fires when
-              something misbehaves in production. In between sits the part I enjoy most: making the path
-              from a commit to a live release fast, repeatable and reversible.
-            </p>
+            <h4 className="about__subhead">Professional summary</h4>
+            {profile.professionalSummary.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
 
             <div className="about__toolbelt">
               {toolbelt.map((tool) => (
