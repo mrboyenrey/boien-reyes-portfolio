@@ -113,6 +113,7 @@ export const skillGroups = [
     title: 'IT Operations',
     icon: 'server',
     skills: [
+      { name: 'Cloudflare (DNS, CDN, WAF & caching)', level: 90 },
       { name: 'Linux (Debian/RHEL)', level: 85 },
       { name: 'Windows Server & AD', level: 82 },
       { name: 'Apache / Nginx', level: 88 },
@@ -528,6 +529,7 @@ export const toolbelt = [
   'Windows Server',
   'Nginx',
   'Apache',
+  'Cloudflare',
   'Bash',
   'PowerShell',
   'Vite',
