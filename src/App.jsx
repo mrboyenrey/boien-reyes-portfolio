@@ -56,7 +56,7 @@ export default function App() {
     document.documentElement.dataset.theme = theme;
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute('content', theme === 'dark' ? '#0b1120' : '#f6f8fc');
+      ?.setAttribute('content', theme === 'dark' ? '#04060c' : '#f4f7fd');
     window.localStorage.setItem(STORAGE_KEY, theme);
   }, [theme]);
 
