@@ -6,6 +6,16 @@
 //   npm i -D playwright          # or: npx playwright install chromium
 //   node scripts/generate-thumbnails.mjs
 //
+// Pass one or more hostnames to refresh only those, so adding a single client
+// site does not churn every other screenshot:
+//
+//   node scripts/generate-thumbnails.mjs advanttechnology.com
+//
+// Add --wide for sites whose layout collapses at 800px wide and pushes the hero
+// below the fold; it captures at 1280x800 instead (also an exact 8:5):
+//
+//   node scripts/generate-thumbnails.mjs advanttechnology.com --wide
+//
 // It uses the locally installed Chrome (channel: 'chrome') when available and
 // falls back to Playwright's bundled Chromium.
 
@@ -30,23 +40,94 @@ const SITES = [
   'https://www.gamsat-prep.com/',
   'https://www.stackrocktalent.com/',
   'https://www.peachbpo.com/',
+  'https://advanttechnology.com/',
 ];
 
+// No arguments means every site; otherwise only the ones matching by hostname.
+// `--wide` is a flag rather than a hostname, so keep it out of the match list.
+const args = process.argv.slice(2);
+const useWide = args.includes('--wide');
+const filters = args.filter((a) => a !== '--wide');
+const targets = filters.length
+  ? SITES.filter((url) => filters.some((needle) => url.includes(needle)))
+  : SITES;
+
+if (targets.length === 0) {
+  console.error(`No site matched: ${filters.join(', ')}`);
+  process.exit(1);
+}
+
 const VIEWPORT = { width: 800, height: 500 };
-const SETTLE_MS = 6000;
+// Some sites collapse into a very tall layout at 800px wide and push the hero
+// far below the fold, so the capture comes back as a bare header. Pass --wide
+// to shoot at 1440x900 instead — also an exact 8:5, so it drops straight into
+// the same card (the thumb container is aspect-ratio 8/5 with object-fit: cover).
+// Used for advanttechnology.com, whose NitroPack build only paints its hero at
+// desktop width.
+const WIDE_VIEWPORT = { width: 1440, height: 900 };
+const SETTLE_MS = 7000;
 const QUALITY = 68;
+
+/**
+ * Consent layers that survive clicking, hidden outright.
+ *
+ * Clicking is unreliable: a site can run more than one consent tool, or redraw
+ * the banner after a rejection. Hiding by CSS is deterministic and only ever
+ * targets consent containers.
+ */
+const CONSENT_SELECTORS = [
+  '.cmplz-cookiebanner',
+  '#cmplz-cookiebanner-container',
+  '#onetrust-banner-sdk',
+  '#onetrust-consent-sdk',
+  '#cookiescript_injected',
+  '#cookie-law-info-bar',
+  '#hs-eu-cookie-confirmation',
+  '.cc-window',
+  '[id*="cookie-consent" i]',
+  '[class*="cookie-consent" i]',
+  '[id*="cookiebanner" i]',
+  '[class*="cookiebanner" i]',
+  '[class*="cookie-notice" i]',
+  '[id*="cookie-notice" i]',
+];
+
+async function hideConsentLayers(page) {
+  const css = CONSENT_SELECTORS.map((s) => `${s}{display:none !important}`).join('\n');
+  await page.addStyleTag({ content: css }).catch(() => {});
+}
 
 /** Best-effort dismissal of the cookie walls that sit over most of these sites. */
 const COOKIE_BUTTONS = [
   '#onetrust-accept-btn-handler',
   '#cookie-accept',
+  'button.cmplz-accept', // Complianz
+  'a.cmplz-accept',
   'button:has-text("Accept all")',
   'button:has-text("Accept All")',
+  'button:has-text("Accept")',
   'button:has-text("Okay")',
   'button:has-text("OK")',
-  'button:has-text("Accept")',
   '[aria-label="Accept cookies"]',
 ];
+
+/**
+ * Walk the page once so deferred media materialises.
+ *
+ * NitroPack and Elementor both hold background images back until an element has
+ * been in view, which is why a screenshot taken straight after load can show an
+ * empty hero. The height is read once up front: some pages grow while they load,
+ * so re-reading it in the loop condition would never terminate.
+ */
+async function primeLazyContent(page) {
+  const height = await page.evaluate(() => document.body.scrollHeight);
+  for (let y = 0; y < height; y += 600) {
+    await page.evaluate((top) => window.scrollTo(0, top), y);
+    await page.waitForTimeout(140);
+  }
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(800);
+}
 
 async function dismissCookieBanner(page) {
   for (const selector of COOKIE_BUTTONS) {
@@ -85,7 +166,7 @@ try {
 }
 
 const context = await browser.newContext({
-  viewport: VIEWPORT,
+  viewport: useWide ? WIDE_VIEWPORT : VIEWPORT,
   deviceScaleFactor: 1,
   userAgent:
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36',
@@ -93,7 +174,7 @@ const context = await browser.newContext({
 
 const results = [];
 
-for (const url of SITES) {
+for (const url of targets) {
   const slug = slugFor(url);
   const file = path.join(OUT_DIR, `${slug}.jpg`);
   const page = await context.newPage();
@@ -103,11 +184,11 @@ for (const url of SITES) {
     // Give late fonts, hero images and cookie banners a moment to appear.
     await page.waitForTimeout(SETTLE_MS);
     await dismissCookieBanner(page);
-    // Nudge the page so lazy-loaded hero media resolves, then return to the top.
-    await page.evaluate(() => window.scrollTo(0, 400));
-    await page.waitForTimeout(900);
-    await page.evaluate(() => window.scrollTo(0, 0));
-    await page.waitForTimeout(700);
+    // Anything the click missed is hidden, so no capture ships with a consent wall.
+    await hideConsentLayers(page);
+    // Force deferred background media to load, then return to the top.
+    await primeLazyContent(page);
+    await hideConsentLayers(page);
     await page.screenshot({ path: file, type: 'jpeg', quality: QUALITY });
     const kb = Math.round(fs.statSync(file).size / 1024);
     results.push({ slug, ok: true, kb });

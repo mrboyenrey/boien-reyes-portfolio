@@ -487,6 +487,7 @@ export const websites = [
   { domain: 'gamsat-prep.com', url: 'https://www.gamsat-prep.com/' },
   { domain: 'stackrocktalent.com', url: 'https://www.stackrocktalent.com/', platform: 'Squarespace' },
   { domain: 'peachbpo.com', url: 'https://www.peachbpo.com/', platform: 'Wix' },
+  { domain: 'advanttechnology.com', url: 'https://advanttechnology.com/', platform: 'WordPress', client: 'Advant Technology' },
 ];
 
 // Tools rendered in the marquee/stack grid.
