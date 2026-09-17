@@ -41,6 +41,7 @@ const SITES = [
   'https://www.stackrocktalent.com/',
   'https://www.peachbpo.com/',
   'https://advanttechnology.com/',
+  'https://theonlystandard.co/',
 ];
 
 // No arguments means every site; otherwise only the ones matching by hostname.

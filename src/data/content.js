@@ -488,6 +488,7 @@ export const websites = [
   { domain: 'stackrocktalent.com', url: 'https://www.stackrocktalent.com/', platform: 'Squarespace' },
   { domain: 'peachbpo.com', url: 'https://www.peachbpo.com/', platform: 'Wix' },
   { domain: 'advanttechnology.com', url: 'https://advanttechnology.com/', platform: 'WordPress', client: 'Advant Technology' },
+  { domain: 'theonlystandard.co', url: 'https://theonlystandard.co/', platform: 'WordPress', client: 'The Only Standard' },
 ];
 
 // Tools rendered in the marquee/stack grid.
