@@ -213,6 +213,13 @@ const paths = {
       <path d="M5.6 14.6 6.2 16.3 7.9 16.9 6.2 17.5 5.6 19.2 5 17.5 3.3 16.9 5 16.3 5.6 14.6Z" />
     </>
   ),
+  clipboard: (
+    <>
+      <path d="M9 3.5h6v3H9z" />
+      <path d="M9 5H6.5A1.5 1.5 0 0 0 5 6.5v13A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 17.5 5H15" />
+      <path d="m9.2 13.4 2 2 3.8-4" />
+    </>
+  ),
 };
 
 export default function Icon({ name, size = 24, className = '', ...rest }) {

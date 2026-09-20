@@ -68,6 +68,11 @@ export const focusAreas = [
     title: 'CI/CD',
     text: 'GitHub Actions pipelines for lint, test, build and zero-downtime release, with rollback paths and audit trails.',
   },
+  {
+    icon: 'clipboard',
+    title: 'Project Management',
+    text: 'Scoping, timelines and stakeholder communication across long-running remote builds, with the work tracked in a real ticket queue rather than a shared inbox.',
+  },
 ];
 
 // Skill groups render as columns with proficiency bars (0-100).
@@ -113,13 +118,24 @@ export const skillGroups = [
     title: 'IT Operations',
     icon: 'server',
     skills: [
-      { name: 'Cloudflare (DNS, CDN, WAF & caching)', level: 90 },
       { name: 'Linux (Debian/RHEL)', level: 85 },
       { name: 'Windows Server & AD', level: 82 },
       { name: 'Apache / Nginx', level: 88 },
-      { name: 'DNS, SSL/TLS, VPN', level: 80 },
+      { name: 'Proxmox / virtualisation', level: 82 },
+      { name: 'Hardware & OS deployment', level: 84 },
       { name: 'Backup & Recovery', level: 86 },
+    ],
+  },
+  {
+    title: 'IT Support & Networking',
+    icon: 'activity',
+    skills: [
+      { name: 'Cloudflare (DNS, CDN, WAF & caching)', level: 90 },
+      { name: 'DNS, SSL/TLS, VPN', level: 80 },
+      { name: 'Network setup & security', level: 83 },
+      { name: 'Helpdesk & ticket triage', level: 86 },
       { name: 'Monitoring & Logging', level: 83 },
+      { name: 'Incident response & runbooks', level: 84 },
     ],
   },
   {
@@ -144,6 +160,18 @@ export const skillGroups = [
       { name: 'Workflow automation (Zapier, Make, n8n)', level: 84 },
       { name: 'AI content & code review pipelines', level: 80 },
       { name: 'Chatbot & assistant prototyping', level: 78 },
+    ],
+  },
+  {
+    title: 'Project Management',
+    icon: 'clipboard',
+    skills: [
+      { name: 'Client scoping & requirements', level: 88 },
+      { name: 'Website & CMS project delivery', level: 88 },
+      { name: 'Project delivery & timelines', level: 87 },
+      { name: 'Stakeholder communication', level: 87 },
+      { name: 'Task triage & prioritisation', level: 85 },
+      { name: 'Remote & async delivery', level: 88 },
     ],
   },
 ];
@@ -538,6 +566,8 @@ export const toolbelt = [
   'npm',
   'Certbot / SSL',
   'Monitoring',
+  'Proxmox',
+  'Project Management',
 ];
 
 // Certifications: every entry below is a real, printed certificate.
