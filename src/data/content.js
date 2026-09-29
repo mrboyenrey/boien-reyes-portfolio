@@ -174,6 +174,18 @@ export const skillGroups = [
       { name: 'Remote & async delivery', level: 88 },
     ],
   },
+  {
+    title: 'Graphic Design',
+    icon: 'palette',
+    skills: [
+      { name: 'Logo & brand identity', level: 90 },
+      { name: 'Adobe Photoshop', level: 90 },
+      { name: 'Adobe Illustrator', level: 88 },
+      { name: 'Adobe InDesign', level: 86 },
+      { name: 'Figma (UI design)', level: 84 },
+      { name: 'Print & marketing collateral', level: 86 },
+    ],
+  },
 ];
 
 // The interactive pipeline section: each stage is clickable.
@@ -519,12 +531,106 @@ export const websites = [
   { domain: 'theonlystandard.co', url: 'https://theonlystandard.co/', platform: 'WordPress', client: 'The Only Standard' },
 ];
 
+// Graphic design portfolio - identity, print and web design work from the
+// freelance and agency years. Covers live in public/design/<slug>.webp and
+// every card links to the full case study on behance.net/BoienReyes.
+export const designWorks = [
+  {
+    slug: 'malachi-construction-logo',
+    title: 'Malachi Construction Limited',
+    category: 'Logo & Branding',
+    blurb: 'Geometric M monogram and wordmark for a construction company, presented as a letterpress identity mockup.',
+    url: 'https://www.behance.net/gallery/51418035/Malachi-Construction-Limited-(Logo-Design-Project)',
+  },
+  {
+    slug: 'business-corporate-logos',
+    title: 'Business & Corporate Logos',
+    category: 'Logo & Branding',
+    blurb: 'A collection of identity marks for business clients, including the Jamestown Stamp Company wordmark.',
+    url: 'https://www.behance.net/gallery/26839855/Business-and-Corporate-Logos',
+  },
+  {
+    slug: 'coffee-gator-postcard',
+    title: 'Coffee Gator Print Set',
+    category: 'Print & Editorial',
+    blurb: 'Product flyer, warranty insert and postcard for a coffee brand, built around the CoffeeGator alligator mark.',
+    url: 'https://www.behance.net/gallery/30813909/Designing-Postcard-for-Coffee-Gator',
+  },
+  {
+    slug: 'trifold-brochure-borealis',
+    title: 'Trifold Brochure: Borealis Theme',
+    category: 'Print & Editorial',
+    blurb: 'Travel brochure for a Northern Lights tour operator in Yellowknife, Canada, themed on the aurora night sky.',
+    url: 'https://www.behance.net/gallery/27914121/Trifold-Brochure-Design-(BOREALIS-THEME)',
+  },
+  {
+    slug: 'vision-insight-flyer',
+    title: 'Vision Insight Flyer',
+    category: 'Print & Editorial',
+    blurb: 'Trifold "Business in a Box" brochure for start-up entrepreneurs, with a network-line motif and desk illustration.',
+    url: 'https://www.behance.net/gallery/29133799/Vision-Insight-Flyer',
+  },
+  {
+    slug: 'bow-and-arrow-book-design',
+    title: 'Bow and Arrow: Book Design Concept',
+    category: 'Print & Editorial',
+    blurb: 'Book cover concept built from a repeating bow-and-arrow line motif in red and white, with a classic serif title.',
+    url: 'https://www.behance.net/gallery/40718491/BOW-AND-ARROW-BOOK-DESIGN-CONCEPT',
+  },
+  {
+    slug: 'talent-poster',
+    title: 'Talent Poster Series',
+    category: 'Poster & Billboard',
+    blurb: 'Typographic poster series pairing oversized serif headlines with high-contrast black-and-white action photography.',
+    url: 'https://www.behance.net/gallery/87877795/Talent-Poster',
+  },
+  {
+    slug: 'lamborghini-harucan-poster',
+    title: 'Lamborghini Huracan Poster',
+    category: 'Poster & Billboard',
+    blurb: 'Outdoor advertising concept for the Lamborghini Huracan LP 610-4, with colour-coded type on a night-city billboard.',
+    url: 'https://www.behance.net/gallery/34468101/Lamborghini-Harucan-Poster',
+  },
+  {
+    slug: 'koord-website',
+    title: 'Koord Website',
+    category: 'Web & UI Design',
+    blurb: 'Corporate website for a motion-control engineering firm, with a panoramic hero and three service panels.',
+    url: 'https://www.behance.net/gallery/44668377/Koord-Website',
+  },
+  {
+    slug: 'techmanswork-website',
+    title: 'Techmanswork Business Website',
+    category: 'Web & UI Design',
+    blurb: 'Business website design presented as a laptop mockup, leading with a bold type-driven hero.',
+    url: 'https://www.behance.net/gallery/44474301/Techmanswork-Business-Website',
+  },
+  {
+    slug: 'weelectricmotors-web-mockup',
+    title: 'Electric Motors Web Mockup',
+    category: 'Web & UI Design',
+    blurb: 'Homepage mockup for an electric motor sales and repair business, built on a yellow and black palette.',
+    url: 'https://www.behance.net/gallery/26463533/I-redesign-a-Web-Mock-Up-for-wwwweelectricmotorscom',
+  },
+  {
+    slug: 'corporate-building-vector',
+    title: 'Corporate Building Vector',
+    category: 'Vector Illustration',
+    blurb: 'Isometric vector illustration of a corporate campus, drawn as flat architectural artwork.',
+    url: 'https://www.behance.net/gallery/29190915/Corporate-Building-Vector-Design',
+  },
+];
+
 // Tools rendered in the marquee/stack grid.
 export const toolbelt = [
   'React',
   'JavaScript',
   'TypeScript',
   'HTML/CSS',
+  'Photoshop',
+  'Illustrator',
+  'InDesign',
+  'Figma',
   'WordPress',
   'Umbraco',
   'C# / .NET',
@@ -787,6 +893,7 @@ const SECTIONS = [
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
   { label: 'Websites', href: '#websites' },
+  { label: 'Design', href: '#design' },
   { label: 'Credentials', href: '#certifications', enabled: credentialsAvailable },
   { label: 'Contact', href: '#contact' },
 ];

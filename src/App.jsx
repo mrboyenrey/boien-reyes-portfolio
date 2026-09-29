@@ -9,11 +9,13 @@ import Pipeline from './components/Pipeline';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Websites from './components/Websites';
+import Design from './components/Design';
 import Credentials from './components/Credentials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-const STORAGE_KEY = 'portfolio-theme';
+// v2: bumped so visitors who had the old key stored pick up the dark default.
+const STORAGE_KEY = 'portfolio-theme-v2';
 
 /** Thin progress bar showing how far down the page the visitor is. */
 function ScrollProgress() {
@@ -44,9 +46,9 @@ function ScrollProgress() {
 
 function readInitialTheme() {
   if (typeof window === 'undefined') return 'dark';
-  const stored = window.localStorage.getItem(STORAGE_KEY);
-  if (stored === 'light' || stored === 'dark') return stored;
-  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  // Dark is the default for everyone. Only an explicit, previously stored
+  // choice of 'light' (i.e. the visitor pressed the toggle) overrides it.
+  return window.localStorage.getItem(STORAGE_KEY) === 'light' ? 'light' : 'dark';
 }
 
 export default function App() {
@@ -79,6 +81,7 @@ export default function App() {
         <Experience />
         <Projects />
         <Websites />
+        <Design />
         <Credentials />
         <Contact />
       </main>
