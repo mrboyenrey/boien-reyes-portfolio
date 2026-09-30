@@ -9,11 +9,11 @@ export const profile = {
   // Square headshot shown inside the "BR" brand mark (navbar + footer).
   // Served from /public. Delete the file and this line to fall back to the initials.
   photo: 'avatar.png',
-  headline: 'Web Developer · WordPress & Umbraco Expert · IT Ops · DevOps & CI/CD',
+  headline: 'Project & Delivery Management · WordPress & Umbraco · IT Ops · DevOps',
   // Rotating roles shown with a typing animation in the hero.
   roles: [
+    'Project & Delivery Manager',
     'WordPress Developer',
-    'WordPress & Umbraco Expert',
     'Full-Stack Web Developer',
     'DevOps Practitioner',
     'CI/CD Pipeline Builder',
@@ -21,7 +21,7 @@ export const profile = {
   location: 'Philippines · Remote-friendly',
   availability: 'Open to full-time & contract roles',
   summary:
-    'I build web applications end to end and keep them running in production. That means shipping React front ends, WordPress and Umbraco CMS platforms, and PHP/.NET services, then automating the releases and owning the monitoring, backups and incident response that keep uptime high.',
+    'I plan, build and run web platforms end to end. That means SOP-driven scoping and delivery tracking, React front ends, WordPress and Umbraco CMS builds and PHP/.NET services, then automated releases plus the monitoring, backups and incident response that keep them online.',
   // Verbatim from the résumé's "Professional Summary" section. Rendered in the About panel.
   professionalSummary: [
     'IT Operations & Web Technology Specialist with 10+ years of remote experience supporting international organizations across the Philippines, Australia, United States, and Canada.',
@@ -43,6 +43,11 @@ export const profile = {
 // `certifications`, so every figure stays true if that data changes.
 
 export const focusAreas = [
+  {
+    icon: 'clipboard',
+    title: 'Project Management',
+    text: 'SOP-driven intake, SMART goals, OKR reporting and Lean, Waterfall or Agile chosen per project. Scoping, timelines and stakeholder communication across long-running remote builds, tracked in a real queue rather than a shared inbox.',
+  },
   {
     icon: 'code',
     title: 'Web Development',
@@ -68,15 +73,23 @@ export const focusAreas = [
     title: 'CI/CD',
     text: 'GitHub Actions pipelines for lint, test, build and zero-downtime release, with rollback paths and audit trails.',
   },
-  {
-    icon: 'clipboard',
-    title: 'Project Management',
-    text: 'Scoping, timelines and stakeholder communication across long-running remote builds, with the work tracked in a real ticket queue rather than a shared inbox.',
-  },
 ];
 
 // Skill groups render as columns with proficiency bars (0-100).
 export const skillGroups = [
+  {
+    title: 'Project Management',
+    icon: 'clipboard',
+    skills: [
+      { name: 'SOP design & process documentation', level: 88 },
+      { name: 'SMART goals & definition of done', level: 88 },
+      { name: 'OKR setting & outcome reporting', level: 84 },
+      { name: 'Lean delivery & continuous improvement', level: 85 },
+      { name: 'Waterfall & stage-gate delivery', level: 86 },
+      { name: 'Agile / Scrum & Kanban boards', level: 85 },
+      { name: 'Scope control, RACI & risk registers', level: 86 },
+    ],
+  },
   {
     title: 'WordPress & CMS',
     icon: 'layers',
@@ -160,18 +173,6 @@ export const skillGroups = [
       { name: 'Workflow automation (Zapier, Make, n8n)', level: 84 },
       { name: 'AI content & code review pipelines', level: 80 },
       { name: 'Chatbot & assistant prototyping', level: 78 },
-    ],
-  },
-  {
-    title: 'Project Management',
-    icon: 'clipboard',
-    skills: [
-      { name: 'Client scoping & requirements', level: 88 },
-      { name: 'Website & CMS project delivery', level: 88 },
-      { name: 'Project delivery & timelines', level: 87 },
-      { name: 'Stakeholder communication', level: 87 },
-      { name: 'Task triage & prioritisation', level: 85 },
-      { name: 'Remote & async delivery', level: 88 },
     ],
   },
   {
@@ -674,6 +675,14 @@ export const toolbelt = [
   'Monitoring',
   'Proxmox',
   'Project Management',
+  'SOP',
+  'SMART Goals',
+  'OKR',
+  'Lean',
+  'Waterfall',
+  'Agile / Scrum',
+  'Kanban',
+  'RACI',
 ];
 
 // Certifications: every entry below is a real, printed certificate.
@@ -856,17 +865,136 @@ export const wordpressCapabilities = [
   },
 ];
 
+// ── Project Management ────────────────────────────────────────────────────
+// The delivery system behind every build on this page. Frameworks are listed
+// as practices applied to real client work, not as certifications.
+export const pmFrameworks = [
+  {
+    icon: 'clipboard',
+    tag: 'Governance',
+    title: 'SOP',
+    text: 'Standard operating procedures for the repeatable parts: intake, staging, release and handover. Written down, versioned with the repo, detailed enough that someone else can run it.',
+  },
+  {
+    icon: 'target',
+    tag: 'Goals',
+    title: 'SMART goals',
+    text: 'A vague brief is turned into specific, measurable, achievable, relevant and time-bound acceptance criteria before a line of code is written.',
+  },
+  {
+    icon: 'gauge',
+    tag: 'Outcomes',
+    title: 'OKRs',
+    text: 'Delivery work rolls up to an objective with a small set of measurable key results, so progress is reported as outcomes rather than hours logged.',
+  },
+  {
+    icon: 'activity',
+    tag: 'Efficiency',
+    title: 'Lean',
+    text: 'Value-stream thinking: cut waiting, rework and handoffs, keep work in progress small, and treat every retrospective as a process improvement.',
+  },
+  {
+    icon: 'pipeline',
+    tag: 'Sequential',
+    title: 'Waterfall',
+    text: 'For fixed-scope work such as a content migration or a compliance-driven build: sequential phases, a sign-off gate at the end of each, changes handled through formal change control.',
+  },
+  {
+    icon: 'check',
+    tag: 'Iterative',
+    title: 'Agile & Scrum',
+    text: 'Timeboxed sprints, a prioritised backlog and a review at the end of each cycle, so the client sees working software instead of a status report.',
+  },
+  {
+    icon: 'users',
+    tag: 'Flow',
+    title: 'Kanban',
+    text: 'A visible board with WIP limits and explicit columns. Work is pulled, not pushed, and blockers surface in the open instead of in a direct message.',
+  },
+  {
+    icon: 'shield',
+    tag: 'Risk',
+    title: 'Risk & change control',
+    text: 'A RAID log, an impact assessment and a rollback plan for anything touching a live site, so an unexpected change never becomes an unplanned outage.',
+  },
+  {
+    icon: 'clipboard',
+    tag: 'Clarity',
+    title: 'RACI & WBS',
+    text: 'One accountable owner per workstream, a work breakdown structure for scope, and a RACI matrix so approvals never stall in an inbox.',
+  },
+];
+
+// Six stages, each with a sign-off gate. Rendered with the same stepper the
+// CI/CD pipeline section uses.
+export const pmLifecycle = [
+  {
+    id: 'intake',
+    name: 'Intake',
+    icon: 'clipboard',
+    artefact: 'SOP-01 · Client intake & requirements',
+    summary: 'Every request enters through the same documented intake, so nothing is lost in a chat thread and nothing starts without an owner.',
+    tools: ['SOP', 'Requirement checklist', 'Scope statement'],
+    gates: ['Brief captured in writing', 'Success criteria agreed', 'Definition of done written'],
+  },
+  {
+    id: 'plan',
+    name: 'Plan',
+    icon: 'target',
+    artefact: 'SMART goal · WBS · estimate',
+    summary: 'The business goal is written as a SMART goal, then broken into a work breakdown structure with estimates, dependencies and assumptions.',
+    tools: ['SMART goals', 'OKRs', 'Work breakdown structure'],
+    gates: ['SMART goal agreed', 'Effort estimated', 'Assumptions recorded'],
+  },
+  {
+    id: 'schedule',
+    name: 'Schedule',
+    icon: 'pipeline',
+    artefact: 'Milestone plan · RACI matrix',
+    summary: 'Milestones, buffer and the critical path are laid out, with a named owner and a RACI row for every deliverable.',
+    tools: ['Milestone plan', 'Gantt', 'RACI matrix'],
+    gates: ['Dates committed', 'Owners named', 'Client dependencies flagged'],
+  },
+  {
+    id: 'execute',
+    name: 'Execute',
+    icon: 'check',
+    artefact: 'Sprint or stage-gate run sheet',
+    summary: 'Work runs as sprints when the scope is still moving and as stage-gated phases when it is fixed, on a board everyone can see.',
+    tools: ['Agile / Scrum', 'Kanban', 'Waterfall gates'],
+    gates: ['Board current', 'WIP within limit', 'Blockers escalated same day'],
+  },
+  {
+    id: 'monitor',
+    name: 'Monitor',
+    icon: 'activity',
+    artefact: 'Status report · RAID log',
+    summary: 'Progress, risk and scope are tracked against the baseline, and any change is priced and approved before it is built.',
+    tools: ['RAID log', 'Change control', 'Lean flow metrics'],
+    gates: ['Risks reviewed', 'Changes approved', 'Scope creep logged'],
+  },
+  {
+    id: 'close',
+    name: 'Close',
+    icon: 'badgeCheck',
+    artefact: 'Handover SOP · retrospective',
+    summary: 'Delivery ends with a written handover, updated SOPs and a retrospective, so the next project starts from a better baseline.',
+    tools: ['Handover SOP', 'Retrospective', 'Kaizen actions'],
+    gates: ['Handover signed off', 'SOPs updated', 'Retro actions assigned'],
+  },
+];
+
 // Headline numbers under the hero - derived from the real arrays above.
 export const metrics = [
+  {
+    value: String(websites.length),
+    label: 'Client projects delivered end to end',
+    hint: 'scoped, built, launched',
+  },
   {
     value: String(websites.filter((site) => site.platform === 'WordPress').length),
     label: 'WordPress sites in production',
     hint: 'live client work',
-  },
-  {
-    value: String(websites.length),
-    label: 'Client sites shipped and live',
-    hint: 'WordPress · Squarespace · Wix',
   },
   {
     value: String(projects.length),
@@ -880,32 +1008,70 @@ export const metrics = [
   },
 ];
 
-// Section navigation. Entries with `enabled: false` are dropped - the Credentials
-// link disappears only if there is genuinely nothing to show there.
+// Section navigation.
+//
+// Grouped so the header stays short as the page grows: an entry with `links`
+// renders as a dropdown on desktop and as a labelled cluster in the mobile
+// drawer, while an entry with only an `href` stays a plain link in both.
+// `enabled: false` drops an entry, so the Credentials group disappears only if
+// there is genuinely nothing to show there.
 const credentialsAvailable =
   certifications.length + education.length + credentialProfiles.length > 0;
 
-const SECTIONS = [
+const enabledOnly = (entry) => entry.enabled !== false;
+const toLink = ({ label, href }) => ({ label, href });
+
+// NOTE: keep these in DOM order, top to bottom. The scroll-spy picks the LAST
+// entry above the fold, so out-of-order items would highlight the wrong one.
+const NAV = [
   { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'WordPress', href: '#wordpress' },
-  { label: 'Pipeline', href: '#pipeline' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Websites', href: '#websites' },
-  { label: 'Design', href: '#design' },
-  { label: 'Credentials', href: '#certifications', enabled: credentialsAvailable },
+  {
+    label: 'Capabilities',
+    links: [
+      { label: 'Skills', href: '#skills' },
+      { label: 'Project Management', href: '#pm' },
+      { label: 'WordPress', href: '#wordpress' },
+      { label: 'CI/CD Pipeline', href: '#pipeline' },
+    ],
+  },
+  {
+    label: 'Work',
+    links: [
+      { label: 'Experience', href: '#experience' },
+      { label: 'Projects', href: '#projects' },
+      { label: 'Client sites', href: '#websites' },
+      { label: 'Design', href: '#design' },
+    ],
+  },
+  {
+    label: 'Credentials',
+    enabled: credentialsAvailable,
+    links: [
+      { label: 'Education', href: '#education', enabled: education.length > 0 },
+      { label: 'Certifications', href: '#certifications', enabled: certifications.length > 0 },
+      { label: 'Verify online', href: '#verify', enabled: credentialProfiles.length > 0 },
+    ],
+  },
   { label: 'Contact', href: '#contact' },
 ];
 
-export const navLinks = SECTIONS.filter((section) => section.enabled !== false).map(
-  ({ label, href }) => ({ label, href }),
+// What the header renders: standalone links and groups, in order.
+export const navItems = NAV.filter(enabledOnly)
+  .map((entry) => (entry.links ? { ...entry, links: entry.links.filter(enabledOnly) } : entry))
+  .filter((entry) => !entry.links || entry.links.length > 0)
+  .map((entry) => (entry.links ? { ...entry, links: entry.links.map(toLink) } : toLink(entry)));
+
+// Flat list of every section link: used by the footer and by the scroll-spy.
+export const navLinks = navItems.flatMap((entry) =>
+  entry.links ? entry.links.map(toLink) : [toLink(entry)],
 );
 
 // Lines shown in the animated terminal card in the hero.
+// Keep this at SIX lines, each under ~300px of text: the body is a fixed
+// height, and extra or wrapped lines grow the card during the typing loop.
 export const terminalLines = [
   { prompt: '$', text: 'whoami', type: 'cmd' },
-  { prompt: '>', text: 'web developer · it operations · devops', type: 'out' },
+  { prompt: '>', text: 'delivery manager · web developer', type: 'out' },
   { prompt: '$', text: 'cat stack.yml', type: 'cmd' },
   { prompt: '>', text: 'react | php | mysql | docker | github-actions', type: 'out' },
   { prompt: '$', text: './deploy.sh --env production', type: 'cmd' },

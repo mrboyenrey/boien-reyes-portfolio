@@ -486,6 +486,74 @@ ol { margin: 0; padding: 0; list-style: none; }
   background: var(--accent-soft);
 }
 
+/* ── Nav groups (Capabilities / Work / Credentials) ─────────────────────── */
+.nav__group { position: relative; display: flex; align-items: center; }
+
+/* The trigger is a button, so it restates the link styling by hand. */
+.nav__groupBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.45rem 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background: none;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: color 0.18s ease, background 0.18s ease;
+}
+
+.nav__groupBtn:hover { color: var(--text); background: var(--surface-2); }
+.nav__groupBtn svg { opacity: 0.7; transition: transform 0.2s ease; }
+
+.nav__group.is-open .nav__groupBtn,
+.nav__group.is-active .nav__groupBtn {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.nav__group.is-open .nav__groupBtn svg { transform: rotate(180deg); }
+
+/* Hidden with `visibility`, not just opacity, so the links cannot be tabbed
+   into while the panel is closed. */
+.nav__panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 5;
+  min-width: 236px;
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.45rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--surface-solid);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s;
+}
+
+.nav__group.is-open .nav__panel {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  /* Flip visibility with no duration on the way IN: a transitioning visibility
+     leaves the panel unfocusable for the first frame, which breaks ArrowDown. */
+  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0s;
+}
+
+/* Specificity beats the <=1400px and <=1240px `.nav__links a` tightening
+   tiers, so dropdown rows keep full size at every desktop width. */
+.nav__links .nav__panel a {
+  padding: 0.55rem 0.7rem;
+  border-radius: 7px;
+  font-size: 0.86rem;
+  white-space: nowrap;
+}
+
 .nav__actions { display: flex; align-items: center; gap: 0.6rem; }
 .nav__burger { display: none; }
 
@@ -499,6 +567,19 @@ ol { margin: 0; padding: 0; list-style: none; }
 }
 
 .nav__drawer a { padding: 0.75rem 0.25rem; border-bottom: 1px solid var(--border); }
+
+/* The drawer shows the same groups as labelled clusters rather than nested
+   toggles: one less tap, and nothing hidden behind a second interaction. */
+.nav__drawerGroup { display: grid; }
+
+.nav__drawerLabel {
+  padding: 1.05rem 0.25rem 0.2rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
 .nav__drawer .btn { margin-top: 1rem; justify-content: center; border-bottom: none; }
 
 /* ── Hero ──────────────────────────────────────────────────────────────── */
@@ -639,6 +720,9 @@ ol { margin: 0; padding: 0; list-style: none; }
 
 .terminal__body {
   padding: 1.15rem 1.1rem 1.4rem;
+  /* Sized for all SIX terminalLines. A seventh line, or a line long enough to
+     wrap on a narrow screen, grows the card part way through the typing loop
+     and shows up as a jitter in the hero. */
   min-height: 232px;
   font-family: var(--mono);
   font-size: 0.83rem;
@@ -1991,6 +2075,86 @@ ol { margin: 0; padding: 0; list-style: none; }
 
 .wp__sites a:hover { color: var(--accent); border-color: var(--accent); }
 
+/* ── Project management ───────────────────────────────────────────────── */
+/* Same card grid as the WordPress section: minmax(280px) lands on 3 columns,
+   so the nine frameworks render as a clean 3x3 with no orphan row. */
+.pm__stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.25rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.pm__stat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  font-size: 0.86rem;
+  color: var(--text-dim);
+}
+
+.pm__stat strong {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  color: var(--accent);
+}
+
+.pm__stat--note {
+  border-color: transparent;
+  background: none;
+  padding-inline: 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.pm__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1.15rem, 2.5vw, 1.75rem);
+}
+
+.pmCard { transition: transform 0.22s ease, border-color 0.22s ease; }
+.pmCard:hover { transform: translateY(-4px); border-color: var(--accent); }
+
+.pmCard__icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  margin-bottom: 0.85rem;
+}
+
+.pmCard__tag {
+  display: inline-block;
+  margin-bottom: 0.45rem;
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.pmCard h3 { font-size: 1rem; }
+.pmCard p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+/* Label above the lifecycle stepper, matching the other mono subheads. */
+.pm__subhead {
+  margin: clamp(2rem, 4vw, 3rem) 0 0.9rem;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 /* ── Footer ───────────────────────────────────────────────────────────── */
 .footer {
   border-top: 1px solid var(--border);
@@ -2049,20 +2213,6 @@ ol { margin: 0; padding: 0; list-style: none; }
   .metric:nth-child(2n) { border-right: none; }
   .metric:nth-child(-n + 2) { border-bottom: 1px solid var(--border); padding-bottom: 1.25rem; }
   .metric:nth-child(n + 3) { padding-top: 1.25rem; }
-}
-
-@media (max-width: 1400px) {
-  .nav__links a {
-    padding: 0.4rem 0.5rem;
-    font-size: 0.82rem;
-  }
-}
-
-@media (max-width: 1240px) {
-  .nav__links a {
-    padding: 0.4rem 0.45rem;
-    font-size: 0.78rem;
-  }
 }
 
 @media (max-width: 1150px) {

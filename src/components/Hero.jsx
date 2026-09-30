@@ -98,7 +98,7 @@ export default function Hero() {
               <Icon name="pin" size={16} /> {profile.location}
             </li>
             <li>
-              <Icon name="gauge" size={16} /> Web Dev · WordPress &amp; Umbraco · DevOps · CI/CD
+              <Icon name="gauge" size={16} /> Delivery Management · Web Dev · WordPress · DevOps
             </li>
           </ul>
 

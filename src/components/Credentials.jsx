@@ -49,7 +49,7 @@ export default function Credentials() {
         />
 
         {education.length > 0 && (
-          <div className="creds__group">
+          <div className="creds__group" id="education">
             <h3 className="creds__groupTitle">
               <Icon name="cap" size={15} /> Education
             </h3>
@@ -93,7 +93,7 @@ export default function Credentials() {
         )}
 
         {credentialProfiles.length > 0 && (
-          <div className="creds__group">
+          <div className="creds__group" id="verify">
             <h3 className="creds__groupTitle">
               <Icon name="external" size={15} /> Verify online
             </h3>
