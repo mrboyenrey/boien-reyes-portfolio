@@ -98,7 +98,7 @@ export default function Hero() {
               <Icon name="pin" size={16} /> {profile.location}
             </li>
             <li>
-              <Icon name="gauge" size={16} /> Delivery Management · Web Dev · WordPress · DevOps
+              <Icon name="gauge" size={16} /> IT Operations · Project Management · Infrastructure
             </li>
           </ul>
 
@@ -131,7 +131,7 @@ export default function Hero() {
               <span className="dot dot--red" />
               <span className="dot dot--amber" />
               <span className="dot dot--green" />
-              <span className="terminal__title">boien@prod-pipeline: ~/portfolio</span>
+              <span className="terminal__title">boien@prod-ops: ~/portfolio</span>
             </div>
 
             <div className="terminal__body">
@@ -145,7 +145,7 @@ export default function Hero() {
             </div>
 
             <div className="terminal__status">
-              <span className="statusDot statusDot--ok" /> pipeline: passing
+              <span className="statusDot statusDot--ok" /> services: healthy
               <span className="statusDivider" />
               <span className="statusDot statusDot--ok" /> uptime 99.9%
               <span className="statusDivider" />
@@ -154,10 +154,10 @@ export default function Hero() {
           </div>
 
           <div className="floatCard floatCard--a">
-            <Icon name="pipeline" size={18} />
+            <Icon name="server" size={18} />
             <div>
-              <strong>CI/CD</strong>
-              <small>commit → production</small>
+              <strong>Servers & hosting</strong>
+              <small>DNS, SSL, backups</small>
             </div>
           </div>
 

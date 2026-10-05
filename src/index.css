@@ -628,13 +628,26 @@ ol { margin: 0; padding: 0; list-style: none; }
 
 .hero__role {
   font-family: var(--mono);
-  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  /* Deliberately the loudest thing under the name: this line types out the two
+     disciplines the portfolio leads with, so it is sized closer to a subhead
+     than to body copy. min-height is in em, so it scales with the clamp. */
+  font-size: clamp(1.1rem, 3vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--accent);
   min-height: 1.8em;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 4px;
+}
+
+/* Gradient on the typed text only, so the caret keeps its solid accent colour. */
+.hero__roleText {
+  background: linear-gradient(100deg, var(--accent), var(--accent-2) 75%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .caret {

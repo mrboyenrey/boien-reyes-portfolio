@@ -9,19 +9,16 @@ export const profile = {
   // Square headshot shown inside the "BR" brand mark (navbar + footer).
   // Served from /public. Delete the file and this line to fall back to the initials.
   photo: 'avatar.png',
-  headline: 'Project & Delivery Management · WordPress & Umbraco · IT Ops · DevOps',
-  // Rotating roles shown with a typing animation in the hero.
-  roles: [
-    'Project & Delivery Manager',
-    'WordPress Developer',
-    'Full-Stack Web Developer',
-    'DevOps Practitioner',
-    'CI/CD Pipeline Builder',
-  ],
+  headline: 'IT Operations & Project Management · Infrastructure, Support & Delivery',
+  // Rotating roles shown with a typing animation in the hero. Deliberately only
+  // two entries: the animation is the first thing a visitor reads, so it
+  // alternates between the two disciplines this portfolio leads with instead of
+  // burying them in a longer cycle.
+  roles: ['IT Operations', 'Project Management'],
   location: 'Philippines · Remote-friendly',
   availability: 'Open to full-time & contract roles',
   summary:
-    'I plan, build and run web platforms end to end. That means SOP-driven scoping and delivery tracking, React front ends, WordPress and Umbraco CMS builds and PHP/.NET services, then automated releases plus the monitoring, backups and incident response that keep them online.',
+    'I keep business systems running and the projects around them on track. That means server, network and hosting administration, monitoring, patching, backups and structured incident response, plus SOP-driven scoping, delivery tracking and stakeholder reporting across remote teams.',
   // Verbatim from the résumé's "Professional Summary" section. Rendered in the About panel.
   professionalSummary: [
     'IT Operations & Web Technology Specialist with 10+ years of remote experience supporting international organizations across the Philippines, Australia, United States, and Canada.',
@@ -49,6 +46,11 @@ export const focusAreas = [
     text: 'SOP-driven intake, SMART goals, OKR reporting and Lean, Waterfall or Agile chosen per project. Scoping, timelines and stakeholder communication across long-running remote builds, tracked in a real queue rather than a shared inbox.',
   },
   {
+    icon: 'server',
+    title: 'IT Operations',
+    text: 'Windows and Linux server administration, Apache & Nginx, DNS, SSL/TLS, network setup, monitoring, patching, backups and structured incident response.',
+  },
+  {
     icon: 'code',
     title: 'Web Development',
     text: 'Accessible, responsive interfaces in React and component-driven CSS, backed by PHP/.NET APIs, MySQL and REST.',
@@ -57,11 +59,6 @@ export const focusAreas = [
     icon: 'layers',
     title: 'WordPress & Umbraco',
     text: 'Expert-level CMS delivery: custom WordPress themes and plugins, Umbraco document types and Razor views, plus migrations with zero content loss.',
-  },
-  {
-    icon: 'server',
-    title: 'IT Operations',
-    text: 'Windows/Linux server admin, Apache & Nginx, DNS, SSL/TLS, backups, patching and structured incident response.',
   },
   {
     icon: 'pipeline',
@@ -143,7 +140,11 @@ export const skillGroups = [
     title: 'IT Support & Networking',
     icon: 'activity',
     skills: [
-      { name: 'Cloudflare (DNS, CDN, WAF & caching)', level: 90 },
+      { name: 'Cloudflare DNS & nameserver management', level: 90 },
+      { name: 'Cloudflare CDN, caching & page rules', level: 88 },
+      { name: 'Cloudflare WAF, bot & DDoS protection', level: 87 },
+      { name: 'Cloudflare Tunnel & Zero Trust access', level: 82 },
+      { name: 'Cloudflare Turnstile (spam protection)', level: 85 },
       { name: 'DNS, SSL/TLS, VPN', level: 80 },
       { name: 'Network setup & security', level: 83 },
       { name: 'Helpdesk & ticket triage', level: 86 },
@@ -1071,9 +1072,9 @@ export const navLinks = navItems.flatMap((entry) =>
 // height, and extra or wrapped lines grow the card during the typing loop.
 export const terminalLines = [
   { prompt: '$', text: 'whoami', type: 'cmd' },
-  { prompt: '>', text: 'delivery manager · web developer', type: 'out' },
-  { prompt: '$', text: 'cat stack.yml', type: 'cmd' },
-  { prompt: '>', text: 'react | php | mysql | docker | github-actions', type: 'out' },
-  { prompt: '$', text: './deploy.sh --env production', type: 'cmd' },
-  { prompt: '>', text: 'build ✓  test ✓  health-check ✓  released in 7m42s', type: 'ok' },
+  { prompt: '>', text: 'it operations · project management', type: 'out' },
+  { prompt: '$', text: 'cat infra.yml', type: 'cmd' },
+  { prompt: '>', text: 'linux | windows | proxmox | dns', type: 'out' },
+  { prompt: '$', text: 'systemctl status nginx', type: 'cmd' },
+  { prompt: '>', text: 'active · 47 days uptime · backups ✓', type: 'ok' },
 ];
