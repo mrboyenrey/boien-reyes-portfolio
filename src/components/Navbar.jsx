@@ -160,7 +160,7 @@ export default function Navbar({ theme, onToggleTheme }) {
           <BrandMark />
           <span className="nav__brandText">
             <strong>{profile.name}</strong>
-            <small>IT Ops · Project Manager · DevOps</small>
+            <small>IT Ops · WordPress · Automation &amp; AI · Full Stack</small>
           </span>
         </a>
 

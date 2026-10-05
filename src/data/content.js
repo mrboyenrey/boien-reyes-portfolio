@@ -10,11 +10,18 @@ export const profile = {
   // Served from /public. Delete the file and this line to fall back to the initials.
   photo: 'avatar.png',
   headline: 'IT Operations & Project Management · Infrastructure, Support & Delivery',
-  // Rotating roles shown with a typing animation in the hero. Deliberately only
-  // two entries: the animation is the first thing a visitor reads, so it
-  // alternates between the two disciplines this portfolio leads with instead of
-  // burying them in a longer cycle.
-  roles: ['IT Operations', 'Project Management'],
+  // Rotating roles shown with a typing animation in the hero. The animation is
+  // the first thing a visitor reads, so order matters: the two disciplines this
+  // portfolio leads with come first and the specialist hats follow. Five entries
+  // is the ceiling — each role types, holds for 1.5s and deletes again, so a
+  // full cycle is already around 16s before it repeats.
+  roles: [
+    'IT Operations',
+    'Project Management',
+    'WordPress Expert',
+    'Automation & AI Expert',
+    'Full Stack Web Development',
+  ],
   location: 'Philippines · Remote-friendly',
   availability: 'Open to full-time & contract roles',
   summary:

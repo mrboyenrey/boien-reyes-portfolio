@@ -98,7 +98,8 @@ export default function Hero() {
               <Icon name="pin" size={16} /> {profile.location}
             </li>
             <li>
-              <Icon name="gauge" size={16} /> IT Operations · Project Management · Infrastructure
+              <Icon name="gauge" size={16} /> IT Operations · Project Management · WordPress ·
+              Automation &amp; AI · Full Stack
             </li>
           </ul>
 

@@ -628,7 +628,7 @@ ol { margin: 0; padding: 0; list-style: none; }
 
 .hero__role {
   font-family: var(--mono);
-  /* Deliberately the loudest thing under the name: this line types out the two
+  /* Deliberately the loudest thing under the name: this line types out the
      disciplines the portfolio leads with, so it is sized closer to a subhead
      than to body copy. min-height is in em, so it scales with the clamp. */
   font-size: clamp(1.1rem, 3vw, 1.85rem);
