@@ -257,18 +257,23 @@ export const pipeline = [
 
 export const experience = [
   {
-    role: 'Web Developer / IT Operations',
+    role: 'IT Operations | Web Developer',
     company: 'Creen Business Management Services',
     period: 'May 2023 - Aug 2026',
     location: 'Philippines · Remote',
     summary:
-      'Owned the company web presence plus the infrastructure behind it: websites, web services, servers, domains and hosting.',
+      'Owned day-to-day IT operations and the company web presence, plus the hosting, domain and DNS infrastructure behind it.',
     highlights: [
-      'Developed and maintained company websites and web services.',
-      'Administered servers and managed domain and hosting infrastructure.',
-      'Contributed design work for marketing visuals.',
+      'Managed day-to-day IT operations, website administration and technical support for business systems.',
+      'Administered web hosting, domain management, DNS configuration, SSL certificates and website infrastructure.',
+      'Maintained and updated company websites, ensuring performance, security and availability.',
+      'Coordinated technical requests, prioritised support tickets and resolved website-related issues.',
+      'Collaborated with remote team members to deliver website enhancements and business initiatives.',
+      'Designed digital marketing materials and web assets to support branding and campaigns.',
+      'Handled website maintenance, troubleshooting, backups and deployment of updates.',
+      'Documented technical processes and provided support to internal team members.',
     ],
-    stack: ['PHP', 'JavaScript', 'MySQL', 'WordPress', 'Ubuntu Linux', 'cPanel', 'Cloudflare', 'DNS'],
+    stack: ['PHP', 'JavaScript', 'MySQL', 'WordPress', 'Ubuntu Linux', 'cPanel', 'Cloudflare', 'DNS', 'SSL/TLS'],
   },
   {
     role: 'Full Stack Developer',
