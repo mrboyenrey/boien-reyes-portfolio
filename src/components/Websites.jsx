@@ -53,7 +53,7 @@ export default function Websites() {
             <strong>{WORDPRESS_COUNT}</strong> on WordPress
           </span>
           <span className="sites__stat sites__stat--note">
-            Platforms verified by inspecting each site, September 2026
+            Platforms verified by inspecting each site, September–October 2026
           </span>
         </Reveal>
 

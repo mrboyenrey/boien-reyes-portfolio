@@ -15,6 +15,7 @@
 // below the fold; it captures at 1280x800 instead (also an exact 8:5):
 //
 //   node scripts/generate-thumbnails.mjs advanttechnology.com --wide
+//   node scripts/generate-thumbnails.mjs fleming.net.au --wide
 //
 // It uses the locally installed Chrome (channel: 'chrome') when available and
 // falls back to Playwright's bundled Chromium.
@@ -42,6 +43,7 @@ const SITES = [
   'https://www.peachbpo.com/',
   'https://advanttechnology.com/',
   'https://theonlystandard.co/',
+  'https://fleming.net.au/',
 ];
 
 // No arguments means every site; otherwise only the ones matching by hostname.
@@ -64,7 +66,8 @@ const VIEWPORT = { width: 800, height: 500 };
 // to shoot at 1440x900 instead — also an exact 8:5, so it drops straight into
 // the same card (the thumb container is aspect-ratio 8/5 with object-fit: cover).
 // Used for advanttechnology.com, whose NitroPack build only paints its hero at
-// desktop width.
+// desktop width, and fleming.net.au, whose Slider Revolution hero layers are
+// positioned for desktop and spill off the left edge at 800px.
 const WIDE_VIEWPORT = { width: 1440, height: 900 };
 const SETTLE_MS = 7000;
 const QUALITY = 68;

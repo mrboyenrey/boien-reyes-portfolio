@@ -518,7 +518,7 @@ export const projects = [
 ];
 
 // Client websites delivered through agency, contract and freelance work.
-// Platforms were verified by inspecting each live site (Sep 2026) - WordPress
+// Platforms were verified by inspecting each live site (Sep-Oct 2026) - WordPress
 // was confirmed via wp-json / wp-login responses and wp-content asset paths.
 // Sites left without a platform could not be confirmed, or have since migrated.
 // NOTE: musclenation.com was removed - the domain is now parked by GoDaddy.
@@ -538,6 +538,7 @@ export const websites = [
   { domain: 'peachbpo.com', url: 'https://www.peachbpo.com/', platform: 'Wix' },
   { domain: 'advanttechnology.com', url: 'https://advanttechnology.com/', platform: 'WordPress', client: 'Advant Technology' },
   { domain: 'theonlystandard.co', url: 'https://theonlystandard.co/', platform: 'WordPress', client: 'The Only Standard' },
+  { domain: 'fleming.net.au', url: 'https://fleming.net.au/', platform: 'WordPress', client: 'Fleming' },
 ];
 
 // Graphic design portfolio - identity, print and web design work from the
