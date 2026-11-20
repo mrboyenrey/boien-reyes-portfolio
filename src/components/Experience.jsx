@@ -3,6 +3,19 @@ import Icon from './Icons';
 import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
 
+function Highlights({ points }) {
+  return (
+    <ul className="timeline__list">
+      {points.map((point) => (
+        <li key={point}>
+          <Icon name="check" size={16} />
+          <span>{point}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function Experience() {
   return (
     <section className="section" id="experience">
@@ -20,9 +33,21 @@ export default function Experience() {
               <div className="card timeline__card">
                 <header className="timeline__head">
                   <div>
-                    <h3>{job.role}</h3>
+                    <h3>{job.positions ? job.company : job.role}</h3>
                     <p className="timeline__company">
-                      {job.company} <span className="muted">· {job.location}</span>
+                      {job.positions ? (
+                        <>
+                          {job.location}
+                          <span className="muted">
+                            {' · '}
+                            {[job.employmentType, job.duration].filter(Boolean).join(' · ')}
+                          </span>
+                        </>
+                      ) : (
+                        <>
+                          {job.company} <span className="muted">· {job.location}</span>
+                        </>
+                      )}
                     </p>
                   </div>
                   <span className="timeline__period">{job.period}</span>
@@ -30,14 +55,25 @@ export default function Experience() {
 
                 <p className="timeline__summary">{job.summary}</p>
 
-                <ul className="timeline__list">
-                  {job.highlights.map((point) => (
-                    <li key={point}>
-                      <Icon name="check" size={16} />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
+                {job.positions ? (
+                  <ol className="timeline__roles">
+                    {job.positions.map((position) => (
+                      <li key={position.title} className="timeline__role">
+                        <div className="timeline__roleHead">
+                          <h4>{position.title}</h4>
+                          <span className="timeline__roleMeta">
+                            {[position.employmentType, position.period, position.duration]
+                              .filter(Boolean)
+                              .join(' · ')}
+                          </span>
+                        </div>
+                        <Highlights points={position.highlights} />
+                      </li>
+                    ))}
+                  </ol>
+                ) : (
+                  <Highlights points={job.highlights} />
+                )}
 
                 <ul className="tagList">
                   {job.stack.map((tech) => (
