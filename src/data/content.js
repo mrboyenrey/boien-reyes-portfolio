@@ -261,41 +261,17 @@ export const experience = [
     company: 'Creen Business Management Services',
     period: 'May 2023 - Aug 2026',
     location: 'Philippines · Remote',
-    employmentType: 'Full-time',
-    duration: '3 yrs 4 mos',
     summary:
       'Owned day-to-day IT operations and the company web presence, plus the hosting, domain and DNS infrastructure behind it.',
-    // One employer, two positions - the web developer role the tenure started
-    // with and the operations role it grew into. Entries without `positions`
-    // render a single flat list of highlights instead.
-    positions: [
-      {
-        title: 'IT Operations | Web Developer',
-        period: 'May 2023 - Aug 2026',
-        employmentType: 'Full-time',
-        duration: '3 yrs 4 mos',
-        highlights: [
-          'Managed day-to-day IT operations, website administration and technical support for business systems.',
-          'Administered web hosting, domain management, DNS configuration, SSL certificates and website infrastructure.',
-          'Maintained and updated company websites, ensuring performance, security and availability.',
-          'Coordinated technical requests, prioritised support tickets and resolved website-related issues.',
-          'Collaborated with remote team members to deliver website enhancements and business initiatives.',
-          'Designed digital marketing materials and web assets to support branding and campaigns.',
-          'Handled website maintenance, troubleshooting, backups and deployment of updates.',
-          'Documented technical processes and provided support to internal team members.',
-        ],
-      },
-      {
-        title: 'Information Technology Web Developer',
-        period: 'May 2023 - Jun 2025',
-        duration: '2 yrs 2 mos',
-        highlights: [
-          'Developed and maintained company websites and web services.',
-          'Administered servers and managed domain, hosting and website infrastructure.',
-          'Supported ongoing website administration, maintenance, troubleshooting and technical issue resolution.',
-          'Contributed visual design and marketing assets supporting company websites and services.',
-        ],
-      },
+    highlights: [
+      'Managed day-to-day IT operations, website administration and technical support for business systems.',
+      'Administered web hosting, domain management, DNS configuration, SSL certificates and website infrastructure.',
+      'Maintained and updated company websites, ensuring performance, security and availability.',
+      'Coordinated technical requests, prioritised support tickets and resolved website-related issues.',
+      'Collaborated with remote team members to deliver website enhancements and business initiatives.',
+      'Designed digital marketing materials and web assets to support branding and campaigns.',
+      'Handled website maintenance, troubleshooting, backups and deployment of updates.',
+      'Documented technical processes and provided support to internal team members.',
     ],
     stack: [
       'PHP',
